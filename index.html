@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ECS Homepage — 3 Design Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#0a1420;--accent:#1f63ff;--steel:#5b6b7d;--line:rgba(11,22,36,.12);--paper:#eef2f7;
+    --sans:"Hanken Grotesk",system-ui,sans-serif;--disp:"Space Grotesk",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh}
+  .wrap{width:min(1180px,92vw);margin:0 auto;padding:64px 0 80px}
+  .top{max-width:760px}
+  .eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.18em;font-size:11.5px;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(32px,4.6vw,52px);letter-spacing:-.02em;line-height:1.05;margin-top:16px}
+  .lead{color:var(--steel);font-size:18px;margin-top:16px;max-width:54em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .opt{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;text-decoration:none;color:inherit}
+  .opt:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(10,20,32,.45)}
+  .pv{height:230px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  /* A preview */
+  .pvA{background:#0a1420}
+  .pvA .grid-bp{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+  .pvA .h{position:absolute;left:24px;top:54px;font-family:var(--disp);font-weight:700;font-size:30px;color:#fff;line-height:1}
+  .pvA .h em{font-style:normal;color:#1f63ff}
+  .pvA .tag{position:absolute;left:24px;bottom:26px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8aa0bb}
+  .pvA .chip{position:absolute;right:20px;bottom:24px;border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:6px 10px;font-family:var(--mono);font-size:10px;color:#fff}
+  /* B preview */
+  .pvB{background:#070a0f}
+  .pvB .orb{position:absolute;width:260px;height:260px;border-radius:50%;right:-80px;top:-60px;background:radial-gradient(circle,rgba(47,123,255,.5),transparent 60%);filter:blur(8px)}
+  .pvB .h{position:absolute;left:22px;top:40px;font-family:"Archivo Black","Space Grotesk",sans-serif;font-weight:800;font-size:38px;line-height:.86;text-transform:uppercase;letter-spacing:-.03em;color:#eef3f9}
+  .pvB .h .b{color:#2f7bff}
+  .pvB .h .o{color:transparent;-webkit-text-stroke:1.4px #9fb0c2}
+  .pvB .pill{position:absolute;left:22px;bottom:26px;background:#2f7bff;color:#fff;border-radius:999px;padding:8px 16px;font-family:var(--disp);font-weight:700;font-size:12px}
+  /* C preview */
+  .pvC{background:#f6f4ef}
+  .pvC .h{position:absolute;left:26px;top:52px;font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:30px;line-height:1.06;color:#1c2a36;max-width:78%}
+  .pvC .h em{font-style:italic;color:#2f5d8a}
+  .pvC .eb{position:absolute;left:26px;top:28px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#a9805a;font-weight:600}
+  .pvC .seal{position:absolute;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;background:#1c2a36;color:#fff;display:grid;place-items:center;text-align:center;font-family:"Newsreader",serif;font-size:11px;line-height:1.1}
+  .body{padding:24px}
+  .opt .num{font-family:var(--mono);font-size:11px;color:var(--steel);letter-spacing:.1em}
+  .opt h2{font-family:var(--disp);font-weight:600;font-size:21px;margin-top:8px;letter-spacing:-.01em}
+  .opt p{color:var(--steel);font-size:14px;margin-top:8px;line-height:1.55}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .t{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 10px}
+  .go{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:14px;color:var(--accent)}
+  .go svg{width:16px;height:16px;transition:transform .2s}
+  .opt:hover .go svg{transform:translateX(4px)}
+  .note{margin-top:46px;border-top:1px solid var(--line);padding-top:24px;color:var(--steel);font-size:14px;display:flex;gap:10px;align-items:flex-start;max-width:60em}
+  .note b{color:var(--ink);font-weight:600}
+  .note svg{width:18px;height:18px;color:var(--accent);flex:none;margin-top:2px}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="eyebrow">Electric Coil Service · Homepage redesign</span>
+    <h1>Three directions for the new ECS site.</h1>
+    <p class="lead">Same content, conversion structure, and AI assistant across all three — each explores a different visual mood. Open any one to scroll the full page and try the chatbot (bottom-right).</p>
+  </div>
+
+  <div class="grid">
+    <a class="opt" href="ECS Home - Engineered.html">
+      <div class="pv pvA">
+        <div class="grid-bp"></div>
+        <div class="h">Perfect-fit<br>coils. <em>Right.</em></div>
+        <div class="tag">Fig. 01 — A-C stator</div>
+        <div class="chip">13,800V</div>
+      </div>
+      <div class="body">
+        <div class="num">01 / Engineered</div>
+        <h2>Engineered</h2>
+        <p>Technical &amp; precise — a blueprint-grid aesthetic with mono spec labels on deep navy. Reads like an engineering document.</p>
+        <div class="tags"><span class="t">Navy + electric blue</span><span class="t">Space Grotesk</span><span class="t">Blueprint</span></div>
+        <span class="go">View this option <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="opt" href="ECS Home - Bold.html">
+      <div class="pv pvB">
+        <div class="orb"></div>
+        <div class="h">Coils<br><span class="b">don't</span><br><span class="o">quit.</span></div>
+        <div class="pill">Get a Quote →</div>
+      </div>
+      <div class="body">
+        <div class="num">02 / Bold &amp; Modern</div>
+        <h2>Bold &amp; Modern</h2>
+        <p>Dark, high-energy and oversized — massive Archivo headlines, a vivid electric-blue accent, and punchy motion. Hard to ignore.</p>
+        <div class="tags"><span class="t">Near-black</span><span class="t">Archivo Black</span><span class="t">High contrast</span></div>
+        <span class="go">View this option <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="opt" href="ECS Home - Premium.html">
+      <div class="pv pvC">
+        <div class="eb">Since 1951</div>
+        <div class="h">The perfect-fit coil, made <em>right.</em></div>
+        <div class="seal">ISO<br>9001</div>
+      </div>
+      <div class="body">
+        <div class="num">03 / Premium</div>
+        <h2>Premium</h2>
+        <p>Airy, refined and trustworthy — Newsreader serif headlines, warm light tones and generous whitespace. Luxury, but approachable.</p>
+        <div class="tags"><span class="t">Warm light</span><span class="t">Newsreader serif</span><span class="t">Editorial</span></div>
+        <span class="go">View this option <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </div>
+
+  <div class="note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <div>The hero/section photos are pulled from your current site (low-resolution), so they'll look soft when enlarged — swap in higher-res shots of your coils and plant and they'll sharpen right up. The <b>AI assistant</b> in the bottom-right is live and answers from your real company info: products, lead times, quality, and contact details.</div>
+  </div>
+</div>
+</body>
+</html>

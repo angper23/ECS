@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Electric Coil Service — Coils That Don't Quit</title>
+<meta name="description" content="Electric Coil Service (ECS): replacement electric coils since 1951. Every coil tested. 24–36 hour emergency shipping. ISO 9001:2015 certified. Temple, PA." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#070a0f; --bg-2:#0d1219; --bg-3:#141b24; --card:#10161e;
+    --line:rgba(255,255,255,.1); --line-2:rgba(255,255,255,.06);
+    --txt:#eef3f9; --txt-2:#9fb0c2; --txt-3:#6b7c8f;
+    --blue:#2f7bff; --blue-2:#5b9bff; --blue-glow:rgba(47,123,255,.5);
+    --steel:#8aa0b8;
+    --disp:"Archivo Black",system-ui,sans-serif;
+    --sans:"Archivo",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+
+    --bot-accent:#2f7bff; --bot-accent-fg:#fff;
+    --bot-surface:#10161e; --bot-surface-2:#1a2330;
+    --bot-text:#eef3f9; --bot-muted:#9fb0c2; --bot-border:rgba(255,255,255,.12);
+    --bot-radius:14px; --bot-font:var(--sans); --bot-title-font:var(--sans);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1240px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:700;color:var(--blue-2)}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--blue)}
+
+  /* NAV */
+  header.nav{position:fixed;inset:0 0 auto 0;z-index:900;transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+  header.nav.scrolled{background:rgba(7,10,15,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .navrow{display:flex;align-items:center;gap:30px;height:78px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mk{width:42px;height:42px;border-radius:11px;background:var(--blue);display:grid;place-items:center;font-family:var(--disp);font-size:20px;color:#fff;box-shadow:0 8px 22px -6px var(--blue-glow)}
+  .brand .nm{font-family:var(--disp);font-size:21px;letter-spacing:-.01em}
+  .brand .nm small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--txt-3);font-weight:400;margin-top:2px}
+  nav.links{display:flex;gap:30px;margin-left:6px}
+  nav.links a{font-size:14.5px;font-weight:600;color:var(--txt-2);transition:color .2s}
+  nav.links a:hover{color:var(--txt)}
+  .navcta{margin-left:auto;display:flex;align-items:center;gap:18px}
+  .navphone{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--txt)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;border:none;background:var(--blue);color:#fff;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-3px);background:var(--blue-2);box-shadow:0 16px 36px -10px var(--blue-glow)}
+  .btn svg{width:17px;height:17px}
+  .btn.lg{padding:18px 34px;font-size:16.5px}
+  .btn.ghost{background:transparent;border:2px solid var(--line);color:var(--txt);padding:13px 24px}
+  .btn.ghost:hover{border-color:var(--blue);background:transparent;box-shadow:none;color:#fff}
+  @media(max-width:880px){nav.links,.navphone{display:none}}
+
+  /* HERO */
+  .hero{position:relative;padding:172px 0 96px;overflow:hidden}
+  .hero .orb{position:absolute;border-radius:50%;filter:blur(20px);opacity:.55}
+  .hero .orb.a{width:560px;height:560px;left:-160px;top:-120px;background:radial-gradient(circle,var(--blue-glow),transparent 60%)}
+  .hero .orb.b{width:680px;height:680px;right:-260px;bottom:-320px;background:radial-gradient(circle,rgba(47,123,255,.26),transparent 62%)}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-family:var(--disp);font-size:clamp(48px,9vw,140px);line-height:.9;letter-spacing:-.035em;text-transform:uppercase}
+  .hero h1 .blue{color:var(--blue);-webkit-text-stroke:0}
+  .hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--txt-2)}
+  .herobtm{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:46px}
+  .hero .sub{font-size:clamp(17px,1.7vw,21px);color:var(--txt-2);max-width:34em;font-weight:500}
+  .hero .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .hero .heroimg{width:300px;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative;flex:none}
+  .hero .heroimg img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(.15) contrast(1.05)}
+  .hero .heroimg .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(7,10,15,.92));padding:30px 16px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-2)}
+  @media(max-width:880px){.herobtm{grid-template-columns:1fr}.hero .heroimg{display:none}}
+
+  /* TICKER */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);overflow:hidden;white-space:nowrap;padding:18px 0}
+  .ticker .track{display:inline-flex;animation:tick 30s linear infinite}
+  .ticker .track span{display:inline-flex;align-items:center;font-family:var(--disp);text-transform:uppercase;font-size:18px;letter-spacing:.01em;color:var(--txt);padding:0 26px}
+  .ticker .track span b{color:var(--blue);margin-left:26px}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* STATS */
+  .stats{padding:96px 0}
+  .statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .scard{border:1px solid var(--line);border-radius:18px;padding:34px 26px;background:linear-gradient(180deg,var(--bg-2),var(--bg));position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+  .scard:hover{transform:translateY(-6px);border-color:rgba(47,123,255,.5)}
+  .scard .n{font-family:var(--disp);font-size:clamp(40px,5vw,62px);line-height:.95;letter-spacing:-.03em;color:#fff}
+  .scard .n b{color:var(--blue)}
+  .scard .l{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--txt-2);margin-top:14px;line-height:1.4}
+  @media(max-width:880px){.statgrid{grid-template-columns:1fr 1fr}}
+
+  .sec{padding:104px 0}
+  .sechead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+  .sechead .l h2{font-family:var(--disp);font-size:clamp(34px,5vw,64px);line-height:.96;letter-spacing:-.03em;text-transform:uppercase;margin-top:18px}
+  .sechead .l h2 .blue{color:var(--blue)}
+  .sechead .r{max-width:30em;color:var(--txt-2);font-size:16.5px;font-weight:500}
+
+  /* PRODUCTS as big rows */
+  .plist{border-top:1px solid var(--line)}
+  .prow{display:grid;grid-template-columns:90px 1fr auto auto;gap:28px;align-items:center;padding:30px 14px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s;cursor:default;position:relative}
+  .prow:hover{background:var(--bg-2);padding-left:26px}
+  .prow .idx{font-family:var(--mono);font-size:15px;color:var(--blue);font-weight:700}
+  .prow .nm{font-family:var(--disp);font-size:clamp(22px,3vw,34px);letter-spacing:-.02em;text-transform:uppercase}
+  .prow .ds{color:var(--txt-2);font-size:15px;font-weight:500;max-width:30em}
+  .prow .sp{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);border:1px solid var(--line);border-radius:999px;padding:8px 15px;white-space:nowrap}
+  .prow .ar{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--txt-2);transition:background .25s,color .25s,transform .25s}
+  .prow:hover .ar{background:var(--blue);color:#fff;border-color:var(--blue);transform:rotate(-45deg)}
+  .prow .ar svg{width:18px;height:18px}
+  @media(max-width:880px){.prow{grid-template-columns:54px 1fr;gap:14px}.prow .ds,.prow .sp,.prow .ar{display:none}}
+
+  /* WHY split with big image */
+  .why{background:var(--bg-2)}
+  .whygrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .whyimg{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+  .whyimg img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(.1) contrast(1.04)}
+  .whyimg .iso{position:absolute;right:18px;top:18px;background:var(--blue);color:#fff;border-radius:14px;padding:14px 18px;font-family:var(--disp);font-size:15px;text-align:center;box-shadow:0 14px 30px -10px var(--blue-glow)}
+  .whyimg .iso small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.14em;font-weight:400;opacity:.9;margin-top:4px}
+  .whyitems{display:flex;flex-direction:column;gap:4px}
+  .whyrow{padding:24px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+  .whyrow:last-child{border-bottom:1px solid var(--line)}
+  .whyrow .bx{width:48px;height:48px;border-radius:12px;background:var(--bg-3);display:grid;place-items:center;color:var(--blue);flex:none;transition:background .25s,color .25s}
+  .whyrow:hover .bx{background:var(--blue);color:#fff}
+  .whyrow .bx svg{width:24px;height:24px}
+  .whyrow h4{font-family:var(--disp);font-size:20px;text-transform:uppercase;letter-spacing:-.01em}
+  .whyrow p{color:var(--txt-2);font-size:15px;font-weight:500;margin-top:6px}
+  @media(max-width:880px){.whygrid{grid-template-columns:1fr;gap:40px}}
+
+  /* ABOUT big statement */
+  .about{text-align:center}
+  .about .big{font-family:var(--disp);font-size:clamp(30px,4.4vw,58px);line-height:1.04;letter-spacing:-.025em;text-transform:uppercase;max-width:16em;margin:24px auto 0}
+  .about .big .blue{color:var(--blue)}
+  .about .body{max-width:46em;margin:30px auto 0;color:var(--txt-2);font-size:17px;font-weight:500}
+  .about .body strong{color:var(--txt);font-weight:700}
+  .aboutimgs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+  .aboutimgs .f{border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .aboutimgs img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(.12) contrast(1.04)}
+  @media(max-width:680px){.aboutimgs{grid-template-columns:1fr;max-width:360px;margin-inline:auto}}
+
+  /* TESTIMONIALS */
+  .quotes{background:var(--bg-2)}
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .qc{border:1px solid var(--line);border-radius:18px;padding:30px;background:var(--card);display:flex;flex-direction:column;gap:18px;transition:transform .3s,border-color .3s}
+  .qc:hover{transform:translateY(-6px);border-color:rgba(47,123,255,.5)}
+  .qc .stars{display:flex;gap:3px;color:var(--blue)}
+  .qc .stars svg{width:17px;height:17px}
+  .qc p{font-size:16.5px;color:var(--txt);font-weight:500;line-height:1.5}
+  .qc .who{margin-top:auto;display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+  .qc .av{width:38px;height:38px;border-radius:11px;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:var(--disp);font-size:14px}
+  .qc .avimg{width:46px;height:46px;border-radius:11px;object-fit:cover;flex:none;border:1px solid var(--line)}
+  .qc .nm{font-weight:700;font-size:14px}
+  .qc .rl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--txt-3)}
+  .qc.feat{grid-column:span 3;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+  .qc.feat p{font-family:var(--disp);font-size:clamp(22px,3vw,34px);line-height:1.15;text-transform:none;letter-spacing:-.015em}
+  @media(max-width:880px){.qgrid{grid-template-columns:1fr}.qc.feat{grid-column:span 1;grid-template-columns:1fr}}
+
+  /* CONTACT */
+  .contact{position:relative;overflow:hidden}
+  .contact .orb{position:absolute;width:600px;height:600px;right:-200px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(47,123,255,.22),transparent 62%);filter:blur(18px)}
+  .cgrid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .cinfo h2{font-family:var(--disp);font-size:clamp(34px,4.6vw,60px);line-height:.96;letter-spacing:-.03em;text-transform:uppercase;margin-top:18px}
+  .cinfo h2 .blue{color:var(--blue)}
+  .cinfo p{color:var(--txt-2);font-size:17px;font-weight:500;margin-top:18px;max-width:32em}
+  .cdetail{margin-top:32px;display:flex;flex-direction:column;gap:14px}
+  .cdetail a,.cdetail div.di{display:flex;align-items:center;gap:16px;font-size:16px}
+  .cdetail .ic{width:48px;height:48px;border-radius:13px;background:var(--bg-3);display:grid;place-items:center;color:var(--blue);flex:none}
+  .cdetail .ic svg{width:21px;height:21px}
+  .cdetail .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-3);display:block}
+  .cdetail .v{font-weight:700;font-size:16.5px}
+  .cdetail a:hover .v{color:var(--blue-2)}
+  form.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px}.field.full{grid-column:span 2}
+  label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-2);margin-bottom:8px;font-weight:700}
+  input,select,textarea{width:100%;font-family:var(--sans);font-weight:500;font-size:15.5px;color:var(--txt);background:var(--bg-2);border:1.5px solid var(--line);border-radius:12px;padding:14px 15px;transition:border-color .18s,box-shadow .18s}
+  input::placeholder,textarea::placeholder{color:var(--txt-3)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,123,255,.18)}
+  select{color:var(--txt)} select option{background:var(--bg-2)}
+  textarea{resize:vertical;min-height:110px}
+  form .btn{width:100%;justify-content:center;margin-top:6px}
+  .formnote{font-family:var(--mono);font-size:11px;color:var(--txt-3);text-align:center;margin-top:14px}
+  .ok{display:none;text-align:center;padding:34px 10px}.ok.show{display:block}
+  .ok .chk{width:60px;height:60px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;margin:0 auto 18px;box-shadow:0 14px 30px -10px var(--blue-glow)}
+  .ok h3{font-family:var(--disp);font-size:24px;text-transform:uppercase}
+  .ok p{color:var(--txt-2);margin-top:10px;font-weight:500}
+  @media(max-width:880px){.cgrid{grid-template-columns:1fr;gap:40px}.frow{grid-template-columns:1fr}.field.full{grid-column:span 1}}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:64px 0 32px;background:var(--bg-2)}
+  .ftop{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding-bottom:44px;border-bottom:1px solid var(--line)}
+  footer .blurb{color:var(--txt-2);font-size:14.5px;font-weight:500;margin-top:18px;max-width:26em}
+  footer h5{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt);margin-bottom:16px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  footer ul a,footer ul li{font-size:14.5px;color:var(--txt-2);font-weight:500}
+  footer ul a:hover{color:var(--blue-2)}
+  .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-family:var(--mono);font-size:11.5px;color:var(--txt-3)}
+
+  .rv{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.ticker .track{animation:none}}
+  /* brand logo */
+  .brandlogo{height:34px;width:auto;display:block}
+  .brand .brandtag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--txt-2)}
+  footer .brandlogo.footlogo{height:38px}
+  @media(max-width:520px){.brand .brandtag{display:none}}
+  /* data sheets */
+  .dsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .dscard{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s}
+  .dscard:hover{transform:translateY(-5px);border-color:rgba(47,123,255,.5)}
+  .dsic{width:50px;height:56px;flex:none;border:1px solid var(--line);border-radius:9px;display:grid;place-items:center;color:var(--blue);background:var(--bg-3)}
+  .dsic svg{width:24px;height:24px}
+  .dsmeta{display:flex;flex-direction:column;flex:1;min-width:0}
+  .dsmeta .t{font-family:var(--disp);text-transform:uppercase;font-size:16px;letter-spacing:-.01em}
+  .dsmeta .m{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--txt-3);margin-top:6px}
+  .dsdl{width:42px;height:42px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--txt-2);transition:.25s}
+  .dscard:hover .dsdl{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .dsdl svg{width:18px;height:18px}
+  @media(max-width:900px){.dsgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.dsgrid{grid-template-columns:1fr}}
+  /* contact extras */
+  .cteam{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+  .cteam-h{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3);font-weight:700;margin-bottom:14px}
+  .cteamgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cperson{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:border-color .2s,transform .2s}
+  .cperson:hover{border-color:rgba(47,123,255,.5);transform:translateY(-2px)}
+  .cp-n{display:block;font-family:var(--disp);text-transform:uppercase;font-size:15px;color:#fff}
+  .cp-r{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--txt-3);margin-top:4px}
+  .cp-e{display:block;font-size:12px;color:var(--blue-2);margin-top:6px;word-break:break-all}
+  .checks{display:flex;flex-wrap:wrap;gap:16px;margin-top:2px}
+  .chk-opt{display:inline-flex;align-items:center;gap:9px;margin:0;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--txt);text-transform:none;letter-spacing:0;cursor:pointer}
+  .chk-opt input{width:18px;height:18px;accent-color:var(--blue)}
+  .cblabel{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-2);margin-bottom:9px;font-weight:700}
+  .privacy{font-family:var(--sans);font-size:12px;color:var(--txt-3);text-align:center;margin-top:14px;line-height:1.55}
+  @media(max-width:560px){.cteamgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap navrow">
+    <a class="brand" href="#top">
+      <img class="brandlogo" src="data:image/png;base64,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" alt="ECS — Electric Coil Service" />
+      <span class="brandtag">EST. 1951</span>
+    </a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#why">Why ECS</a>
+      <a href="#about">About</a>
+      <a href="#proof">Reviews</a>
+      <a href="#datasheets">Data Sheets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="navcta">
+      <span class="navphone">1.800.523.8179</span>
+      <a class="btn" href="#contact">Get a Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <span class="eyebrow">Replacement coils · since 1951</span>
+    <h1 style="margin-top:22px">Coils that<br><span class="blue">don't quit.</span><br><span class="out">Neither do we.</span></h1>
+    <div class="herobtm">
+      <div>
+        <p class="sub">Stator, armature and elevator coils built to OEM spec, tested one by one, and shipped when you need them. For 75 years, the shop that motor pros call first.</p>
+        <div class="acts">
+          <a class="btn lg" href="#contact">Get a Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost lg" href="#products">Products</a>
+        </div>
+      </div>
+      <div class="heroimg rv">
+        <img src="https://www.electriccoil.com/img/ph_home1.jpg" alt="Precision-wound electric coil by ECS" referrerpolicy="no-referrer" />
+        <span class="cap">A-C stator coil · form-wound · tested</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Every coil tested <b>◆</b></span><span>24–36 hr emergency shipping <b>◆</b></span><span>ISO 9001:2015 <b>◆</b></span><span>Meets or exceeds OEM <b>◆</b></span><span>Up to 13,800 volts <b>◆</b></span><span>Made in Temple, PA <b>◆</b></span>
+    <span>Every coil tested <b>◆</b></span><span>24–36 hr emergency shipping <b>◆</b></span><span>ISO 9001:2015 <b>◆</b></span><span>Meets or exceeds OEM <b>◆</b></span><span>Up to 13,800 volts <b>◆</b></span><span>Made in Temple, PA <b>◆</b></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="statgrid">
+      <div class="scard rv"><div class="n"><b>75</b></div><div class="l">Years independently owned & operated</div></div>
+      <div class="scard rv"><div class="n"><b>100</b>%</div><div class="l">Of coils individually tested — never sampled</div></div>
+      <div class="scard rv"><div class="n"><b>24</b>hr</div><div class="l">Emergency orders ship in 24–36 hours</div></div>
+      <div class="scard rv"><div class="n">32k<b>ft²</b></div><div class="l">Plant dedicated solely to coils</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="l rv"><span class="eyebrow">The catalog</span><h2>One product.<br><span class="blue">Done right.</span></h2></div>
+      <div class="r rv">Formed replacement coils for heavy industrial, HVAC, mechanical and elevator systems — wound to original spec and ready to install.</div>
+    </div>
+    <div class="plist">
+      <div class="prow rv"><span class="idx">01</span><span class="nm">A-C Stator Coils</span><span class="ds">Form-wound for AC motors and generators across the full voltage range.</span><span class="sp">Up to 13,800 V</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div>
+      <div class="prow rv"><span class="idx">02</span><span class="nm">Hermetic Stator</span><span class="ds">Sealed-system coils engineered for refrigerant and compressor duty.</span><span class="sp">HVAC / sealed</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div>
+      <div class="prow rv"><span class="idx">03</span><span class="nm">D-C Armature</span><span class="ds">Precision-wound armature coils for direct-current motor rebuilds.</span><span class="sp">All sizes</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div>
+      <div class="prow rv"><span class="idx">04</span><span class="nm">Elevator Coils</span><span class="ds">All types — many kept in stock to ship the very same day.</span><span class="sp">Many in stock</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div>
+      <div class="prow rv"><span class="idx">05</span><span class="nm">Eckmeyer Coils</span><span class="ds">Specialty Eckmeyer-pattern coils wound to original specification.</span><span class="sp">Wound to spec</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div>
+      <div class="prow rv"><span class="idx">06</span><span class="nm">Rotor & Interpole</span><span class="ds">Rotor and interpole coils to complete any machine rebuild.</span><span class="sp">Full rebuild</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why" id="why">
+  <div class="wrap">
+    <div class="whygrid">
+      <div class="whyimg rv">
+        <img src="https://www.electriccoil.com/img/ph_home2.jpg" alt="ECS technician inspecting a finished coil" referrerpolicy="no-referrer" loading="lazy" />
+        <div class="iso">ISO<br>9001:2015<small>CERTIFIED</small></div>
+      </div>
+      <div>
+        <div class="rv" style="margin-bottom:30px"><span class="eyebrow">Why ECS</span><h2 style="font-family:var(--disp);font-size:clamp(30px,4vw,48px);line-height:.98;letter-spacing:-.03em;text-transform:uppercase;margin-top:16px">The OEM alternative<br>that actually shows up.</h2></div>
+        <div class="whyitems">
+          <div class="whyrow rv"><div class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><div><h4>Every coil tested</h4><p>We test every single coil for quality and performance — not a random sample. What passed is what ships.</p></div></div>
+          <div class="whyrow rv"><div class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.2c-.4.5 0 1.3.6 1.3H11l-1.4 7.1c-.1.7.8 1.1 1.2.5L19.5 11c.4-.5 0-1.3-.6-1.3H13l1.3-7c.1-.7-.8-1.1-1.3-.7z"/></svg></div><div><h4>24–36 hr emergency shipping</h4><p>When a line is down, we move. Most emergency orders ship within 24 to 36 hours.</p></div></div>
+          <div class="whyrow rv"><div class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg></div><div><h4>Meets or exceeds OEM</h4><p>Built to original equipment spec or better — for years of dependable service.</p></div></div>
+          <div class="whyrow rv"><div class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><div><h4>A vast spec library</h4><p>Your coil specs are probably already on file, so we get to winding without the wait.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center">Our story</span>
+    <div class="big rv">Since 1951, we've made one thing — and made it <span class="blue">right the first time.</span></div>
+    <div class="body rv">
+      <p>Electric Coil Service is an <strong>independently owned</strong> manufacturer of replacement electric coils in Temple, PA. Our <strong>32,000 sq. ft. plant</strong> is dedicated solely to coils for your motor-repair needs, and our technicians bring years of experience to every stator and armature they wind. We've built our reputation one coil — and one customer — at a time.</p>
+    </div>
+    <div class="aboutimgs rv">
+      <div class="f"><img src="https://www.electriccoil.com/img/ph_home1.jpg" alt="ECS coil" referrerpolicy="no-referrer" loading="lazy" /></div>
+      <div class="f"><img src="https://www.electriccoil.com/img/ph_home2.jpg" alt="ECS coil inspection" referrerpolicy="no-referrer" loading="lazy" /></div>
+      <div class="f"><img src="https://www.electriccoil.com/img/ph_home3.jpg" alt="ECS coil manufacturing" referrerpolicy="no-referrer" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec quotes" id="proof">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="l rv"><span class="eyebrow">The verdict</span><h2>Pros who won't<br><span class="blue">call anyone else.</span></h2></div>
+      <div class="r rv">Motor-repair, elevator and industrial maintenance teams have trusted ECS for decades.</div>
+    </div>
+    <div class="qgrid">
+      <div class="qc feat rv">
+        <img src="https://www.electriccoil.com/img/ph_home1.jpg" referrerpolicy="no-referrer" loading="lazy" alt="A-C stator coil by ECS" style="width:84px;height:84px;border-radius:16px;object-fit:cover;flex:none;border:1px solid var(--line)" />
+        <p>"I know ECS coils will always arrive on time, fit exactly the way they're supposed to, and deliver the performance I expect. I wouldn't work with anyone else."</p>
+      </div>
+      <div class="qc rv"><div class="stars">★★★★★</div><p>ECS is about people, not just coils — always friendly, courteous and reliable.</p><div class="who"><img class="avimg" src="https://www.electriccoil.com/img/ph_home2.jpg" referrerpolicy="no-referrer" loading="lazy" alt="Coil testing at ECS" /><div><div class="nm">Every coil tested</div><div class="rl">In-house at ECS</div></div></div></div>
+      <div class="qc rv"><div class="stars">★★★★★</div><p>Excellent quality, always on time. What more would you want?</p><div class="who"><img class="avimg" src="https://www.electriccoil.com/img/ph_home3.jpg" referrerpolicy="no-referrer" loading="lazy" alt="Finished replacement coil" /><div><div class="nm">Finished replacement coil</div><div class="rl">Made in Temple, PA</div></div></div></div>
+      <div class="qc rv"><div class="stars">★★★★★</div><p>ECS positively excels in elevator coils — perfect fit, every time.</p><div class="who"><img class="avimg" src="https://www.electriccoil.com/img/ph_home1.jpg" referrerpolicy="no-referrer" loading="lazy" alt="Elevator coil by ECS" /><div><div class="nm">Elevator coils</div><div class="rl">Many kept in stock</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA SHEETS -->
+<section class="sec" id="datasheets" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="l rv"><span class="eyebrow">Data sheets</span><h2>Specs.<br><span class="blue">On demand.</span></h2></div>
+      <div class="r rv">Download, print and fill in the spec form for your coil type, then send it with your order to fast-track your quote.</div>
+    </div>
+    <div class="dsgrid">
+      <a class="dscard rv" href="datasheets/stator-coil-data-sheet.html"><span class="dsic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><span class="dsmeta"><span class="t">Stator Coil Data Sheet</span><span class="m">PDF · Specification form</span></span><span class="dsdl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span></a>
+      <a class="dscard rv" href="datasheets/armature-coil-data-sheet.html"><span class="dsic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><span class="dsmeta"><span class="t">Armature Coil Data Sheet</span><span class="m">PDF · 2-sided form</span></span><span class="dsdl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span></a>
+      <a class="dscard rv" href="datasheets/rotor-coil-data-sheet.html"><span class="dsic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><span class="dsmeta"><span class="t">Rotor Coil Data Sheet</span><span class="m">PDF · Specification form</span></span><span class="dsdl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="orb"></div>
+  <div class="wrap">
+    <div class="cgrid">
+      <div class="cinfo rv">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Need a coil?<br><span class="blue">Let's build it.</span></h2>
+        <p>Experience the ECS difference. Tell us what you're rebuilding — your specs may already be on file. For emergency orders, pick up the phone and we'll get moving.</p>
+        <div class="cdetail">
+          <a href="tel:18005238179"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span><span><span class="k">Toll free</span><span class="v">1.800.523.8179</span></span></a>
+          <a href="tel:6109213191"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><span><span class="k">Local · Fax</span><span class="v">610.921.3191 · 610.929.7824</span></span></a>
+          <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><span class="k">Plant</span><span class="v">531 Water Street, Temple, PA 19560</span></span></div>
+        </div>
+        <div class="cteam">
+          <h4 class="cteam-h">Your ECS contacts</h4>
+          <div class="cteamgrid">
+            <a class="cperson" href="mailto:vince.watt@electriccoil.com"><span class="cp-n">Vincent Watt</span><span class="cp-r">President</span><span class="cp-e">vince.watt@electriccoil.com</span></a>
+            <a class="cperson" href="mailto:jeffrey.tantum@electriccoil.com"><span class="cp-n">Jeff Tantum</span><span class="cp-r">VP, Sales &amp; Marketing</span><span class="cp-e">jeffrey.tantum@electriccoil.com</span></a>
+            <a class="cperson" href="mailto:john.martin@electriccoil.com"><span class="cp-n">John Martin</span><span class="cp-r">Sales</span><span class="cp-e">john.martin@electriccoil.com</span></a>
+            <a class="cperson" href="mailto:ronann.dautrich@electriccoil.com"><span class="cp-n">Ronann Dautrich</span><span class="cp-r">Controller</span><span class="cp-e">ronann.dautrich@electriccoil.com</span></a>
+          </div>
+        </div>
+      </div>
+      <form class="card rv" id="quoteForm" novalidate>
+        <div id="formInner">
+          <div class="frow">
+            <div class="field"><label for="nm">Name</label><input id="nm" name="name" required placeholder="Jane Winder" /></div>
+            <div class="field"><label for="co">Company</label><input id="co" name="company" placeholder="Motor Repair Co." /></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="em">Email</label><input id="em" type="email" name="email" required placeholder="you@company.com" /></div>
+            <div class="field"><label for="ph">Phone</label><input id="ph" type="tel" name="phone" placeholder="(000) 000-0000" /></div>
+          </div>
+          <div class="field full"><label for="ct">Coil type needed</label>
+            <select id="ct" name="coil">
+              <option value="">Select a coil type…</option>
+              <option>A-C Stator Coil</option><option>Hermetic Stator Coil</option><option>D-C Armature Coil</option><option>Elevator Coil</option><option>Eckmeyer Coil</option><option>Rotor / Interpole Coil</option><option>Not sure — need help</option>
+            </select>
+          </div>
+          <div class="field full"><label for="ms">Tell us about your coil / motor</label><textarea id="ms" name="message" placeholder="Make, model, voltage, quantity, and whether it's an emergency order…"></textarea></div>
+          <div class="field full">
+            <span class="cblabel">Preferred contact method</span>
+            <div class="checks">
+              <label class="chk-opt"><input type="checkbox" name="byphone" /> <span>Contact me by phone</span></label>
+              <label class="chk-opt"><input type="checkbox" name="byemail" /> <span>Contact me by e-mail</span></label>
+            </div>
+          </div>
+          <button class="btn lg" type="submit">Send my request
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="privacy">We respect your privacy. Any information you provide is used only to respond to your request — we never sell or share it.</div>
+          <div class="formnote">Same-day responses · Emergency orders ship in 24–36 hrs</div>
+        </div>
+        <div class="ok" id="okMsg">
+          <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>Request sent!</h3>
+          <p>An ECS specialist will reach out shortly. Need it now? Call 1.800.523.8179.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <div>
+        <a class="brand" href="#top"><img class="brandlogo footlogo" src="data:image/png;base64,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" alt="ECS — Electric Coil Service" /></a>
+        <p class="blurb">Independently owned manufacturer of replacement electric coils since 1951. Right first time, every time.</p>
+      </div>
+      <div><h5>Products</h5><ul><li><a href="#products">A-C Stator Coils</a></li><li><a href="#products">D-C Armature Coils</a></li><li><a href="#products">Elevator Coils</a></li><li><a href="#products">Hermetic / Rotor</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="#about">About ECS</a></li><li><a href="#why">Why ECS</a></li><li><a href="#proof">Reviews</a></li><li><a href="#datasheets">Data Sheets</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>531 Water Street</li><li>Temple, PA 19560</li><li><a href="tel:18005238179">1.800.523.8179</a></li><li>Fax 610.929.7824</li></ul></div>
+    </div>
+    <div class="fbot"><span>© 2026 Electric Coil Service, Inc.</span><span>ISO 9001:2015 Certified · Made in Temple, PA</span></div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>20);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%4,3)*60)+'ms';io.observe(el);});
+  const form=document.getElementById('quoteForm');
+  form.addEventListener('submit',(e)=>{e.preventDefault();const n=form.querySelector('#nm'),em=form.querySelector('#em');if(!n.value.trim()){n.focus();return;}if(!em.value.trim()||!em.checkValidity()){em.focus();return;}document.getElementById('formInner').style.display='none';document.getElementById('okMsg').classList.add('show');});
+</script>
+<script>
+/* ============================================================
+   ECS AI Assistant — shared floating chatbot widget
+   Theme it per-page by setting CSS variables on :root:
+     --bot-accent        launcher + accents (default #2563d6)
+     --bot-accent-fg     text on accent (default #fff)
+     --bot-surface       panel background
+     --bot-surface-2     secondary surface (bot bubbles, input)
+     --bot-text          primary text
+     --bot-muted         muted text
+     --bot-border        hairlines
+     --bot-radius        corner radius for panel/bubbles
+     --bot-font          font-family for the widget
+     --bot-title-font    font-family for the header title
+   Optionally set data attributes on the <script> tag:
+     data-bot-name="ECS Assistant"
+   ============================================================ */
+(function () {
+  "use strict";
+
+  const KB = `
+You are the ECS Assistant, the friendly, knowledgeable AI helper on the website of
+Electric Coil Service, Inc. (ECS). Answer questions from prospective and existing
+customers clearly, warmly and concisely (2-4 sentences unless asked for detail).
+You are professional but approachable. Always be helpful and steer interested
+visitors toward contacting ECS for a quote.
+
+=== COMPANY FACTS ===
+• Name: Electric Coil Service, Inc. (ECS)
+• In business since 1951 — over 70 years of coil manufacturing experience.
+• Independently owned and operated.
+• Location / plant: 531 Water Street, Temple, PA 19560. A 32,000 sq. ft. facility
+  dedicated SOLELY to making electric coils for motor repair needs.
+• Phone: 610.921.3191   Toll Free: 1.800.523.8179   Fax: 610.929.7824
+• ISO 9001:2015 certified.
+• Quality motto: "Right first time... every time."
+
+=== WHAT MAKES ECS DIFFERENT ===
+• ECS tests EVERY coil it produces — not random sampling. Every coil is individually
+  tested for quality and performance before it ships.
+• 24–36 hour shipment available on most emergency orders. Fast, reliable delivery.
+• All coils meet or exceed original equipment (OEM) specifications.
+• Vast library/inventory of coil specifications — your spec is likely already on file.
+• Focuses ONLY on replacement coils (unlike general suppliers), so deep specialization.
+• Technicians have years of experience with all types and sizes of stator and armature coils.
+
+=== PRODUCTS (coil types ECS manufactures) ===
+• A-C Stator Coils (up to 13,800 volts)
+• Hermetic Stator Coils
+• D-C Armature Coils
+• All types of Elevator Coils (many kept in stock)
+• Eckmeyer Coils
+• Rotor Coils
+• Interpole Coils
+Applications: heavy industrial, HVAC and mechanical systems, elevators, and electric
+motor repair / winding shops.
+
+=== ORDERING / NEXT STEPS ===
+• To request a quote or place an order, call 1.800.523.8179, or use the contact form
+  on this page. Encourage visitors to reach out — ECS responds quickly.
+• If you don't know something specific (exact pricing, a niche spec, current lead time
+  for an unusual order), say so honestly and point them to call 1.800.523.8179 or use
+  the contact form. Never invent specifications, prices, or guarantees.
+• Keep answers grounded in the facts above. Do not discuss competitors by name.
+`.trim();
+
+  const script = document.currentScript;
+  const BOT_NAME = "ECS Assistant";
+
+  const SUGGESTIONS = [
+    "What types of coils do you make?",
+    "How fast can you ship?",
+    "How do I request a quote?",
+    "What makes ECS different?",
+  ];
+
+  // ---- styles ----
+  const css = `
+  .ecsbot, .ecsbot * { box-sizing: border-box; }
+  .ecsbot {
+    --b-accent: var(--bot-accent, #2563d6);
+    --b-accent-fg: var(--bot-accent-fg, #ffffff);
+    --b-surface: var(--bot-surface, #ffffff);
+    --b-surface-2: var(--bot-surface-2, #f1f4f9);
+    --b-text: var(--bot-text, #16202e);
+    --b-muted: var(--bot-muted, #6b7787);
+    --b-border: var(--bot-border, rgba(20,32,46,.12));
+    --b-radius: var(--bot-radius, 16px);
+    font-family: var(--bot-font, system-ui, -apple-system, "Segoe UI", sans-serif);
+    position: fixed; right: 22px; bottom: 22px; z-index: 2147483000;
+  }
+  .ecsbot-launch {
+    display: flex; align-items: center; gap: 10px;
+    border: none; cursor: pointer;
+    background: var(--b-accent); color: var(--b-accent-fg);
+    height: 58px; padding: 0 20px 0 16px; border-radius: 999px;
+    font: inherit; font-weight: 600; font-size: 15px; letter-spacing: .01em;
+    box-shadow: 0 12px 34px -8px color-mix(in oklab, var(--b-accent) 60%, transparent), 0 2px 8px rgba(0,0,0,.18);
+    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s, opacity .2s;
+  }
+  .ecsbot-launch:hover { transform: translateY(-2px); box-shadow: 0 18px 42px -10px color-mix(in oklab, var(--b-accent) 70%, transparent), 0 3px 10px rgba(0,0,0,.2); }
+  .ecsbot-launch svg { width: 24px; height: 24px; display: block; }
+  .ecsbot-launch .ecsbot-pulse { position: relative; display: inline-flex; }
+  .ecsbot-launch .ecsbot-pulse::after {
+    content: ""; position: absolute; inset: -3px; border-radius: 50%;
+    border: 2px solid var(--b-accent-fg); opacity: .0; animation: ecsbot-ping 2.6s ease-out infinite;
+  }
+  @keyframes ecsbot-ping { 0%{transform:scale(.8);opacity:.5} 70%{transform:scale(1.7);opacity:0} 100%{opacity:0} }
+  .ecsbot[data-open="true"] .ecsbot-launch { opacity: 0; pointer-events: none; transform: scale(.7); }
+
+  .ecsbot-panel {
+    position: absolute; right: 0; bottom: 0;
+    width: min(380px, calc(100vw - 32px));
+    height: min(560px, calc(100vh - 110px));
+    background: var(--b-surface); color: var(--b-text);
+    border: 1px solid var(--b-border);
+    border-radius: calc(var(--b-radius) + 4px);
+    box-shadow: 0 30px 70px -18px rgba(8,16,28,.45), 0 8px 22px rgba(8,16,28,.18);
+    display: flex; flex-direction: column; overflow: hidden;
+    opacity: 0; transform: translateY(16px) scale(.98); pointer-events: none;
+    transition: opacity .26s ease, transform .26s cubic-bezier(.2,.8,.2,1);
+  }
+  .ecsbot[data-open="true"] .ecsbot-panel { opacity: 1; transform: none; pointer-events: auto; }
+
+  .ecsbot-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 16px 15px; background: var(--b-accent); color: var(--b-accent-fg);
+  }
+  .ecsbot-head .ecsbot-ava {
+    width: 38px; height: 38px; border-radius: 50%; flex: none;
+    display: grid; place-items: center;
+    background: color-mix(in oklab, var(--b-accent-fg) 18%, transparent);
+  }
+  .ecsbot-head .ecsbot-ava svg { width: 22px; height: 22px; }
+  .ecsbot-head h3 { margin: 0; font: inherit; font-weight: 700; font-size: 15.5px; font-family: var(--bot-title-font, inherit); letter-spacing: .01em; }
+  .ecsbot-head .ecsbot-status { display: flex; align-items: center; gap: 6px; font-size: 12px; opacity: .85; margin-top: 2px; font-weight: 500; }
+  .ecsbot-head .ecsbot-dot { width: 7px; height: 7px; border-radius: 50%; background: #46e08a; box-shadow: 0 0 0 0 rgba(70,224,138,.6); animation: ecsbot-live 2s infinite; }
+  @keyframes ecsbot-live { 0%{box-shadow:0 0 0 0 rgba(70,224,138,.5)} 70%{box-shadow:0 0 0 6px rgba(70,224,138,0)} 100%{box-shadow:0 0 0 0 rgba(70,224,138,0)} }
+  .ecsbot-close { margin-left: auto; background: transparent; border: none; color: var(--b-accent-fg); cursor: pointer; opacity: .8; padding: 4px; border-radius: 8px; line-height: 0; }
+  .ecsbot-close:hover { opacity: 1; background: color-mix(in oklab, var(--b-accent-fg) 16%, transparent); }
+  .ecsbot-close svg { width: 20px; height: 20px; }
+
+  .ecsbot-body { flex: 1; overflow-y: auto; padding: 18px 16px 8px; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
+  .ecsbot-body::-webkit-scrollbar { width: 8px; }
+  .ecsbot-body::-webkit-scrollbar-thumb { background: var(--b-border); border-radius: 8px; }
+
+  .ecsbot-row { display: flex; gap: 9px; align-items: flex-end; max-width: 90%; }
+  .ecsbot-row.bot { align-self: flex-start; }
+  .ecsbot-row.user { align-self: flex-end; flex-direction: row-reverse; }
+  .ecsbot-mini { width: 26px; height: 26px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--b-accent); color: var(--b-accent-fg); }
+  .ecsbot-mini svg { width: 15px; height: 15px; }
+  .ecsbot-bubble {
+    padding: 10px 13px; border-radius: var(--b-radius); font-size: 14px; line-height: 1.5;
+    background: var(--b-surface-2); color: var(--b-text);
+    border-bottom-left-radius: 5px;
+    white-space: pre-wrap; word-wrap: break-word;
+  }
+  .ecsbot-row.user .ecsbot-bubble { background: var(--b-accent); color: var(--b-accent-fg); border-bottom-left-radius: var(--b-radius); border-bottom-right-radius: 5px; }
+
+  .ecsbot-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 2px 2px 14px; }
+  .ecsbot-chip {
+    border: 1px solid var(--b-border); background: var(--b-surface);
+    color: var(--b-text); cursor: pointer; font: inherit; font-size: 12.5px; font-weight: 500;
+    padding: 8px 12px; border-radius: 999px; transition: background .16s, border-color .16s, transform .12s;
+  }
+  .ecsbot-chip:hover { background: var(--b-surface-2); border-color: color-mix(in oklab, var(--b-accent) 45%, var(--b-border)); transform: translateY(-1px); }
+
+  .ecsbot-typing { display: inline-flex; gap: 4px; padding: 13px 14px; }
+  .ecsbot-typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--b-muted); opacity: .5; animation: ecsbot-bounce 1.3s infinite; }
+  .ecsbot-typing span:nth-child(2){ animation-delay: .18s } .ecsbot-typing span:nth-child(3){ animation-delay: .36s }
+  @keyframes ecsbot-bounce { 0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-5px);opacity:.9} }
+
+  .ecsbot-foot { padding: 10px 12px 12px; border-top: 1px solid var(--b-border); }
+  .ecsbot-inwrap { display: flex; align-items: flex-end; gap: 8px; background: var(--b-surface-2); border: 1px solid var(--b-border); border-radius: 14px; padding: 6px 6px 6px 14px; transition: border-color .16s; }
+  .ecsbot-inwrap:focus-within { border-color: var(--b-accent); }
+  .ecsbot-in { flex: 1; border: none; background: transparent; resize: none; outline: none; font: inherit; font-size: 14px; color: var(--b-text); max-height: 96px; padding: 6px 0; line-height: 1.4; }
+  .ecsbot-in::placeholder { color: var(--b-muted); }
+  .ecsbot-send { flex: none; width: 36px; height: 36px; border-radius: 10px; border: none; cursor: pointer; background: var(--b-accent); color: var(--b-accent-fg); display: grid; place-items: center; transition: opacity .16s, transform .12s; }
+  .ecsbot-send:hover { transform: translateY(-1px); }
+  .ecsbot-send:disabled { opacity: .4; cursor: default; transform: none; }
+  .ecsbot-send svg { width: 18px; height: 18px; }
+  .ecsbot-note { text-align: center; font-size: 10.5px; color: var(--b-muted); margin: 8px 2px 0; letter-spacing: .02em; }
+  `;
+
+  const ICON_CHAT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>';
+  const ICON_BOLT = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13.2c-.4.5 0 1.3.6 1.3H11l-1.4 7.1c-.1.7.8 1.1 1.2.5L19.5 11c.4-.5 0-1.3-.6-1.3H13l1.3-7c.1-.7-.8-1.1-1.3-.7z"/></svg>';
+  const ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+  const ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
+
+  function build() {
+    const style = document.createElement("style");
+    style.textContent = css;
+    document.head.appendChild(style);
+
+    const root = document.createElement("div");
+    root.className = "ecsbot";
+    root.setAttribute("data-open", "false");
+    root.innerHTML = `
+      <button class="ecsbot-launch" aria-label="Open ${BOT_NAME}">
+        <span class="ecsbot-pulse">${ICON_CHAT}</span>
+        <span>Ask ECS</span>
+      </button>
+      <div class="ecsbot-panel" role="dialog" aria-label="${BOT_NAME}">
+        <div class="ecsbot-head">
+          <span class="ecsbot-ava">${ICON_BOLT}</span>
+          <div>
+            <h3>${BOT_NAME}</h3>
+            <div class="ecsbot-status"><span class="ecsbot-dot"></span> Online · replies instantly</div>
+          </div>
+          <button class="ecsbot-close" aria-label="Close chat">${ICON_CLOSE}</button>
+        </div>
+        <div class="ecsbot-body"></div>
+        <div class="ecsbot-foot">
+          <div class="ecsbot-inwrap">
+            <textarea class="ecsbot-in" rows="1" placeholder="Ask about coils, lead times, quotes…"></textarea>
+            <button class="ecsbot-send" aria-label="Send">${ICON_SEND}</button>
+          </div>
+          <div class="ecsbot-note">AI assistant · for orders call 1.800.523.8179</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(root);
+
+    const els = {
+      root,
+      launch: root.querySelector(".ecsbot-launch"),
+      panel: root.querySelector(".ecsbot-panel"),
+      close: root.querySelector(".ecsbot-close"),
+      body: root.querySelector(".ecsbot-body"),
+      input: root.querySelector(".ecsbot-in"),
+      send: root.querySelector(".ecsbot-send"),
+    };
+
+    const history = []; // {role, content}
+    let greeted = false;
+    let busy = false;
+
+    function scroll() { els.body.scrollTop = els.body.scrollHeight; }
+
+    function addMsg(role, text) {
+      const row = document.createElement("div");
+      row.className = "ecsbot-row " + (role === "user" ? "user" : "bot");
+      const bubble = document.createElement("div");
+      bubble.className = "ecsbot-bubble";
+      bubble.textContent = text;
+      if (role === "bot") {
+        const mini = document.createElement("div");
+        mini.className = "ecsbot-mini";
+        mini.innerHTML = ICON_BOLT;
+        row.appendChild(mini);
+      }
+      row.appendChild(bubble);
+      els.body.appendChild(row);
+      scroll();
+      return bubble;
+    }
+
+    function addChips() {
+      const wrap = document.createElement("div");
+      wrap.className = "ecsbot-chips";
+      SUGGESTIONS.forEach((s) => {
+        const c = document.createElement("button");
+        c.className = "ecsbot-chip";
+        c.textContent = s;
+        c.addEventListener("click", () => { wrap.remove(); ask(s); });
+        wrap.appendChild(c);
+      });
+      els.body.appendChild(wrap);
+      scroll();
+    }
+
+    function typing(on) {
+      let t = els.body.querySelector(".ecsbot-typing-row");
+      if (on) {
+        if (t) return;
+        const row = document.createElement("div");
+        row.className = "ecsbot-row bot ecsbot-typing-row";
+        row.innerHTML = `<div class="ecsbot-mini">${ICON_BOLT}</div><div class="ecsbot-bubble" style="padding:0"><div class="ecsbot-typing"><span></span><span></span><span></span></div></div>`;
+        els.body.appendChild(row);
+        scroll();
+      } else if (t) { t.remove(); }
+    }
+
+    function greet() {
+      if (greeted) return;
+      greeted = true;
+      addMsg("bot", "Hi there! 👋 I'm the ECS Assistant. Ask me anything about our replacement coils, lead times, quality, or how to get a quote.");
+      addChips();
+    }
+
+    function localFallback(text) {
+      const q = text.toLowerCase().trim();
+      if (!q || /^(hi+|hello|hey|howdy|good (morning|afternoon|evening)|greetings|sup|yo)\b/.test(q) || q.length < 6)
+        return "Hi! I'm the ECS Assistant. I can answer questions about our replacement coils, lead times, quotes, and more. What can I help you with?";
+      if (/elevator/i.test(q))
+        return "ECS manufactures all types of elevator coils and keeps many in stock for fast delivery. Call 1.800.523.8179 to check availability.";
+      if (/coil|stator|armature|rotor|hermetic|eckmeyer|interpole|motor|winding|rewind|replacement/i.test(q))
+        return "ECS manufactures A-C Stator Coils (up to 13,800V), Hermetic Stator Coils, D-C Armature Coils, Elevator Coils, Eckmeyer Coils, Rotor Coils, and Interpole Coils — for heavy industrial, HVAC, elevator, and motor repair applications.";
+      if (/ship|lead.?time|deliver|rush|emergency|urgent|turnaround|how.?long|how fast|how soon/i.test(q))
+        return "Most emergency orders ship within 24-36 hours. ECS keeps a vast library of coil specs on file, which speeds turnaround significantly. For your specific lead time, call 1.800.523.8179.";
+      if (/quote|price|cost|how much|buy|purchas|afford|billing/i.test(q))
+        return "Getting a quote is easy — call toll-free at 1.800.523.8179 or use the contact form on this page. ECS responds quickly, and your spec may already be on file.";
+      if (/different|better|stand out|advantage|competi|best|why (choose|pick|use|ecs)/i.test(q))
+        return "ECS tests EVERY coil it produces — not random sampling. In business since 1951, ISO 9001:2015 certified, and focused exclusively on replacement coils, ECS ensures all coils meet or exceed OEM specs.";
+      if (/quality|certif|iso|oem|spec|guarantee|standard/i.test(q))
+        return "ECS is ISO 9001:2015 certified with the motto \"Right first time, every time.\" Every coil is individually tested before shipping and meets or exceeds OEM specifications.";
+      if (/location|address|where.*located|plant|facility|temple|pennsylvania/i.test(q))
+        return "ECS is at 531 Water Street, Temple, PA 19560 — a 32,000 sq. ft. facility dedicated solely to electric coil manufacturing.";
+      if (/phone|number|reach|email|fax/i.test(q))
+        return "Call ECS at 610.921.3191 or toll-free at 1.800.523.8179. Fax: 610.929.7824. You can also use the contact form on this page.";
+      if (/volt|13.?800|voltage/i.test(q))
+        return "ECS manufactures A-C Stator Coils up to 13,800 volts, covering a wide range of industrial motor applications.";
+      if (/year|since|histor|founded|established|1951|experience/i.test(q))
+        return "Electric Coil Service has been in business since 1951 — over 70 years of coil manufacturing experience, independently owned and operated.";
+      if (/what (do|does|is|are).*(you|ecs)|tell me about|who are you|about ecs|what.*offer|what.*service|what.*product/i.test(q))
+        return "ECS — Electric Coil Service — has manufactured replacement electric coils since 1951. We make A-C Stator, Hermetic, D-C Armature, Elevator, Rotor, Interpole, and Eckmeyer Coils for industrial, HVAC, and motor repair applications. Every coil is tested before shipping.";
+      if (/help|assist|contact|order|request|start|get (a|one)|need|looking/i.test(q))
+        return "I'm here to help! You can ask me about coil types, lead times, quotes, or what makes ECS different. Or call us directly at 1.800.523.8179.";
+      return "For the most accurate answer, call ECS at 1.800.523.8179 or use the contact form — the team responds quickly and will be happy to help.";
+    }
+
+    async function ask(text) {
+      if (busy) return;
+      text = (text || "").trim();
+      if (!text) return;
+      const chips = els.body.querySelector(".ecsbot-chips");
+      if (chips) chips.remove();
+      addMsg("user", text);
+      history.push({ role: "user", content: text });
+      els.input.value = "";
+      els.input.style.height = "auto";
+      busy = true; els.send.disabled = true;
+      typing(true);
+
+      try {
+        const messages = [
+          { role: "user", content: KB + "\n\nAcknowledge silently and then act as the ECS Assistant for the conversation that follows." },
+          { role: "assistant", content: "Understood — I'm ready to help as the ECS Assistant." },
+          ...history,
+        ];
+        let reply;
+        if (window.claude && typeof window.claude.complete === "function") {
+          reply = await window.claude.complete({ messages });
+        } else {
+          reply = localFallback(text);
+        }
+        typing(false);
+        addMsg("bot", (reply || "").trim() || "Sorry, I didn't catch that — could you rephrase? For immediate help, call 1.800.523.8179.");
+        history.push({ role: "assistant", content: reply || "" });
+      } catch (e) {
+        typing(false);
+        addMsg("bot", localFallback(text));
+      } finally {
+        busy = false; els.send.disabled = false; els.input.focus();
+      }
+    }
+
+    function open() { root.setAttribute("data-open", "true"); greet(); setTimeout(() => els.input.focus(), 280); }
+    function close() { root.setAttribute("data-open", "false"); }
+
+    els.launch.addEventListener("click", open);
+    els.close.addEventListener("click", close);
+    els.send.addEventListener("click", () => ask(els.input.value));
+    els.input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(els.input.value); }
+    });
+    els.input.addEventListener("input", () => {
+      els.input.style.height = "auto";
+      els.input.style.height = Math.min(els.input.scrollHeight, 96) + "px";
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
+  else build();
+})();
+
+</script>
+</body>
+</html>

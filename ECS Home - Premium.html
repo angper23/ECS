@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Electric Coil Service — Replacement Coils, Crafted Since 1951</title>
+<meta name="description" content="Electric Coil Service (ECS): replacement electric coils since 1951. Every coil individually tested. 24–36 hour emergency shipping. ISO 9001:2015 certified. Temple, PA." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── tokens ─────────────────────────────────────────────────── */
+:root {
+  --paper: #f5f2ec; --paper-2: #edeae2; --card: #fffcf7; --white: #fffefb;
+  --ink: #1b2836; --ink-2: #2b3d4c; --steel: #5d6f7e; --steel-2: #8b9aa6;
+  --line: rgba(27,40,54,.12); --line-2: rgba(27,40,54,.06);
+  --blue: #2f5d8a; --blue-deep: #1e4567; --blue-soft: #e8eff6; --blue-glow: rgba(47,93,138,.18);
+  --gold: #a9805a; --gold-soft: #f5ede3;
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "Hanken Grotesk", system-ui, sans-serif;
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --bot-accent: #2f5d8a; --bot-accent-fg: #fff;
+  --bot-surface: #fffefb; --bot-surface-2: #f1eee7;
+  --bot-text: #1b2836; --bot-muted: #5d6f7e; --bot-border: rgba(27,40,54,.12);
+  --bot-radius: 18px; --bot-font: var(--sans); --bot-title-font: var(--serif);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.wrap { width: min(1160px, 90vw); margin: 0 auto; }
+
+/* ─── typography ─────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 11px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--gold);
+}
+.eyebrow::before { content: ""; width: 22px; height: 1.5px; background: var(--gold); }
+.eyebrow.c { justify-content: center; }
+
+/* ─── nav ────────────────────────────────────────────────────── */
+header.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 900;
+  transition: background .35s, backdrop-filter .35s, border-color .35s, box-shadow .35s;
+  border-bottom: 1px solid transparent;
+}
+header.nav.scrolled {
+  background: rgba(245,242,236,.93); backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom-color: var(--line); box-shadow: 0 4px 24px rgba(27,40,54,.06);
+}
+.navrow { display: flex; align-items: center; gap: 28px; height: 84px; }
+.brand { display: flex; align-items: center; gap: 13px; flex: none; }
+.brandlogo { height: 34px; width: auto; }
+.brandtag { font-family: var(--serif); font-weight: 500; font-size: 17px; letter-spacing: .01em; line-height: 1.1; white-space: nowrap; }
+.brandtag small { display: block; font-family: var(--sans); font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--steel); font-weight: 600; margin-top: 3px; }
+nav.links { display: flex; gap: 30px; margin-left: 6px; }
+nav.links a { font-size: 14.5px; font-weight: 500; color: var(--ink-2); position: relative; padding: 4px 0; }
+nav.links a::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 0; height: 1.5px; background: var(--gold); transition: width .28s var(--ease-out); }
+nav.links a:hover::after { width: 100%; }
+.navcta { margin-left: auto; display: flex; align-items: center; gap: 18px; }
+.navphone { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--sans); font-weight: 600; font-size: 14.5px;
+  padding: 12px 22px; border-radius: 999px; cursor: pointer;
+  border: 1.5px solid var(--blue); background: var(--blue); color: #fff;
+  transition: transform .22s var(--ease-out), box-shadow .22s, background .22s;
+}
+.btn:hover { transform: translateY(-2px); background: var(--blue-deep); box-shadow: 0 14px 32px -12px rgba(30,69,103,.65); }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.btn.lg { padding: 16px 30px; font-size: 15.5px; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { background: transparent; border-color: rgba(27,40,54,.4); box-shadow: none; }
+.btn.gold { background: var(--gold); border-color: var(--gold); }
+.btn.gold:hover { background: #8f6a48; border-color: #8f6a48; box-shadow: 0 14px 32px -12px rgba(143,106,72,.55); }
+@media(max-width: 880px) { nav.links, .navphone { display: none; } }
+@media(max-width: 560px) { .brandtag { display: none; } }
+
+/* ─── hero ───────────────────────────────────────────────────── */
+.hero { padding: 144px 0 100px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 60% 50%, rgba(47,93,138,.055) 0%, transparent 70%);
+  pointer-events: none;
+}
+.herogrid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--gold-soft); border: 1px solid rgba(169,128,90,.28);
+  border-radius: 999px; padding: 7px 14px 7px 10px;
+  font-size: 12.5px; font-weight: 600; color: var(--gold); margin-bottom: 22px;
+}
+.hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #46c97a; box-shadow: 0 0 0 3px rgba(70,201,122,.22); animation: pulse-dot 2.2s ease-out infinite; }
+@keyframes pulse-dot { 0%,100%{box-shadow:0 0 0 3px rgba(70,201,122,.22)} 50%{box-shadow:0 0 0 6px rgba(70,201,122,.08)} }
+.hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.04; letter-spacing: -.018em; color: var(--ink); }
+.hero h1 em { font-style: italic; color: var(--blue); }
+.hero .sub { font-size: 18.5px; color: var(--steel); max-width: 32em; margin-top: 22px; line-height: 1.62; }
+.hero .acts { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; align-items: center; }
+.hero .trust-row { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+.hero .trust-pill { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.hero .trust-pill svg { width: 17px; height: 17px; color: var(--blue); flex: none; }
+.hero .trust-sep { width: 1px; height: 20px; background: var(--line); }
+
+/* hero image */
+.heroart { position: relative; }
+.heroart .frame { border-radius: 180px 180px 16px 16px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 50px 90px -40px rgba(27,40,54,.52), 0 2px 0 1px var(--line-2); border: 1px solid var(--line-2); }
+.heroart .frame img { width: 100%; height: 100%; object-fit: cover; }
+.heroart .chip {
+  position: absolute; left: -28px; bottom: 48px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 22px;
+  box-shadow: 0 24px 52px -22px rgba(27,40,54,.5);
+}
+.heroart .chip .n { font-family: var(--serif); font-size: 36px; font-weight: 500; color: var(--blue); line-height: 1; }
+.heroart .chip .l { font-size: 12px; color: var(--steel); margin-top: 5px; letter-spacing: .02em; }
+.heroart .iso-badge {
+  position: absolute; right: -20px; top: 40px;
+  width: 90px; height: 90px; border-radius: 50%; background: var(--ink); color: #fff;
+  display: grid; place-items: center; text-align: center;
+  box-shadow: 0 18px 42px -16px rgba(27,40,54,.7);
+}
+.heroart .iso-badge b { font-family: var(--serif); font-size: 12.5px; font-weight: 500; line-height: 1.2; }
+.heroart .iso-badge small { font-size: 7.5px; letter-spacing: .18em; display: block; margin-top: 3px; color: var(--steel-2); }
+@media(max-width: 880px) { .herogrid { grid-template-columns: 1fr; gap: 48px; } .heroart { max-width: 380px; margin: 0 auto; } .heroart .chip { left: 0; } .heroart .iso-badge { right: -10px; } }
+
+/* ─── trust strip ────────────────────────────────────────────── */
+.strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
+.stripin { display: grid; grid-template-columns: repeat(4, 1fr); }
+.si { padding: 36px 12px; text-align: center; border-right: 1px solid var(--line); position: relative; }
+.si:last-child { border-right: 0; }
+.si .n { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 3.4vw, 46px); color: var(--ink); line-height: 1; }
+.si .n em { font-style: italic; color: var(--blue); }
+.si .l { font-size: 12.5px; color: var(--steel); margin-top: 8px; letter-spacing: .04em; }
+@media(max-width: 680px) { .stripin { grid-template-columns: 1fr 1fr; } .si:nth-child(2n) { border-right: 0; } .si:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+
+/* ─── section base ───────────────────────────────────────────── */
+.sec { padding: 110px 0; }
+.sec.white { background: var(--white); }
+.sec.dark { background: var(--ink); color: #cdd8e1; }
+.sechead { max-width: 680px; margin: 0 auto 64px; text-align: center; }
+.sechead.left { margin-left: 0; text-align: left; }
+.sechead h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 4vw, 52px); line-height: 1.08; letter-spacing: -.018em; margin-top: 18px; color: var(--ink); }
+.sec.dark .sechead h2 { color: #fff; }
+.sechead p { color: var(--steel); font-size: 17.5px; margin-top: 16px; line-height: 1.65; }
+
+/* ─── products / services ────────────────────────────────────── */
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.pcard { background: var(--card); padding: 38px 32px; transition: background .28s; }
+.pcard:hover { background: var(--blue-soft); }
+.pcard .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.pcard .ic { width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; color: var(--blue); transition: background .28s, color .28s, border-color .28s; }
+.pcard:hover .ic { background: var(--blue); color: #fff; border-color: var(--blue); }
+.pcard .ic svg { width: 24px; height: 24px; }
+.pcard .no { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--steel-2); }
+.pcard h3 { font-family: var(--serif); font-weight: 500; font-size: 23px; letter-spacing: -.01em; margin-top: 24px; color: var(--ink); }
+.pcard p { color: var(--steel); font-size: 14.5px; margin-top: 9px; line-height: 1.6; }
+.pcard .sp { font-size: 12px; letter-spacing: .05em; color: var(--blue); font-weight: 700; margin-top: 18px; display: inline-block; }
+@media(max-width: 880px) { .pgrid { grid-template-columns: 1fr 1fr; } }
+@media(max-width: 560px) { .pgrid { grid-template-columns: 1fr; } .pcard { padding: 30px 24px; } }
+
+/* ─── process / how it works ─────────────────────────────────── */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; position: relative; }
+.process-grid::before { content: ""; position: absolute; top: 38px; left: 12.5%; right: 12.5%; height: 1.5px; background: linear-gradient(90deg, var(--gold) 0%, var(--blue) 100%); opacity: .28; }
+.pstep { padding: 0 20px; text-align: center; position: relative; }
+.pstep .num {
+  width: 76px; height: 76px; border-radius: 50%; background: var(--card);
+  border: 1.5px solid var(--line); display: grid; place-items: center;
+  font-family: var(--serif); font-weight: 500; font-size: 28px; color: var(--blue);
+  margin: 0 auto 24px; position: relative; z-index: 1;
+  box-shadow: 0 6px 24px rgba(27,40,54,.1);
+  transition: background .28s, border-color .28s, box-shadow .28s, color .28s;
+}
+.pstep:hover .num { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 12px 36px -8px rgba(47,93,138,.5); }
+.pstep h4 { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--ink); margin-bottom: 10px; }
+.pstep p { font-size: 14px; color: var(--steel); line-height: 1.6; }
+@media(max-width: 780px) { .process-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .process-grid::before { display: none; } }
+@media(max-width: 480px) { .process-grid { grid-template-columns: 1fr; } }
+
+/* ─── why ECS ────────────────────────────────────────────────── */
+.whygrid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.whyart { position: relative; }
+.whyart .frame { border-radius: 18px; overflow: hidden; aspect-ratio: 3/2; box-shadow: 0 40px 70px -38px rgba(27,40,54,.55); }
+.whyart .frame img { width: 100%; height: 100%; object-fit: cover; }
+.whylist { display: flex; flex-direction: column; }
+.whyitem { padding: 26px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 20px; }
+.whyitem:last-child { border-bottom: 1px solid var(--line); }
+.whyitem .no { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--blue); line-height: 1.1; }
+.whyitem h4 { font-family: var(--serif); font-weight: 500; font-size: 21px; letter-spacing: -.01em; color: var(--ink); }
+.whyitem p { color: var(--steel); font-size: 14.8px; margin-top: 6px; line-height: 1.62; }
+@media(max-width: 880px) { .whygrid { grid-template-columns: 1fr; gap: 52px; } }
+
+/* ─── about ──────────────────────────────────────────────────── */
+.about { text-align: center; }
+.about .pull { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.4vw, 46px); line-height: 1.28; letter-spacing: -.012em; max-width: 18em; margin: 26px auto 0; color: var(--ink); }
+.about .pull em { font-style: italic; color: var(--blue); }
+.about .body { max-width: 44em; margin: 34px auto 0; color: var(--steel); font-size: 16.5px; line-height: 1.72; }
+.about .milestones { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
+.milestone .n { font-family: var(--serif); font-weight: 500; font-size: 40px; color: var(--blue); line-height: 1; }
+.milestone .n em { font-style: italic; }
+.milestone .l { font-size: 13px; color: var(--steel); margin-top: 6px; letter-spacing: .04em; }
+.about .sign { margin-top: 40px; font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--ink); }
+.about .sign small { display: block; font-family: var(--sans); font-style: normal; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--steel); margin-top: 6px; font-weight: 600; }
+
+/* ─── testimonials ───────────────────────────────────────────── */
+.qgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.qc {
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+  padding: 36px; display: flex; flex-direction: column; gap: 16px;
+  transition: transform .3s var(--ease-out), box-shadow .3s;
+}
+.qc:hover { transform: translateY(-5px); box-shadow: 0 30px 60px -30px rgba(27,40,54,.45); }
+.qc .mk { font-family: var(--serif); font-size: 56px; line-height: .36; color: var(--gold); height: 28px; }
+.qc p { font-family: var(--serif); font-weight: 400; font-size: 20px; line-height: 1.45; color: var(--ink-2); letter-spacing: -.005em; }
+.qc.feat { grid-column: span 2; text-align: center; align-items: center; background: var(--blue-soft); border-color: rgba(47,93,138,.2); }
+.qc.feat p { font-size: clamp(21px, 2.6vw, 30px); max-width: 22em; }
+@media(max-width: 760px) { .qgrid { grid-template-columns: 1fr; } .qc.feat { grid-column: span 1; } }
+
+/* ─── data sheets ────────────────────────────────────────────── */
+.dsgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dscard {
+  display: flex; gap: 16px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 24px; text-decoration: none; color: inherit;
+  transition: transform .25s var(--ease-out), box-shadow .25s;
+}
+.dscard:hover { transform: translateY(-4px); box-shadow: 0 26px 52px -34px rgba(27,40,54,.5); }
+.dsic { width: 46px; height: 54px; flex: none; border: 1px solid var(--line); border-radius: 7px; display: grid; place-items: center; color: var(--blue); background: var(--paper); }
+.dsic svg { width: 22px; height: 22px; }
+.dsmeta { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.dsmeta .t { font-family: var(--serif); font-weight: 500; font-size: 18px; letter-spacing: -.01em; color: var(--ink); }
+.dsmeta .m { font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--steel); margin-top: 5px; font-weight: 600; }
+.dsdl { width: 40px; height: 40px; flex: none; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink); transition: .25s; }
+.dscard:hover .dsdl { background: var(--blue); color: #fff; border-color: var(--blue); }
+.dsdl svg { width: 17px; height: 17px; }
+@media(max-width: 880px) { .dsgrid { grid-template-columns: 1fr 1fr; } }
+@media(max-width: 560px) { .dsgrid { grid-template-columns: 1fr; } }
+
+/* ─── contact ────────────────────────────────────────────────── */
+.contact { background: var(--ink); color: #cdd8e1; }
+.contact .eyebrow { color: var(--gold); }
+.cgrid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 60px; align-items: start; }
+.cinfo h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.06; letter-spacing: -.018em; margin-top: 18px; color: #fff; }
+.cinfo h2 em { font-style: italic; color: #9bb6d4; }
+.cinfo p { color: #9fb0c0; font-size: 16.5px; margin-top: 18px; max-width: 32em; line-height: 1.68; }
+.cdetail { margin-top: 34px; display: flex; flex-direction: column; }
+.cdetail a, .cdetail .di { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.1); font-size: 16px; }
+.cdetail .ic { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; display: grid; place-items: center; color: #9bb6d4; flex: none; transition: background .22s, border-color .22s; }
+.cdetail a:hover .ic { background: rgba(155,182,212,.12); border-color: rgba(155,182,212,.4); }
+.cdetail .ic svg { width: 19px; height: 19px; }
+.cdetail .k { font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #7f93a5; display: block; font-weight: 700; }
+.cdetail .v { font-weight: 600; font-size: 16.5px; color: #fff; }
+.cdetail a:hover .v { color: #9bb6d4; }
+.cteam { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); }
+.cteam-h { font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #7f93a5; font-weight: 700; margin-bottom: 14px; }
+.cteamgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cperson { display: block; padding: 13px 15px; border: 1px solid rgba(255,255,255,.11); border-radius: 10px; transition: border-color .22s, background .22s; }
+.cperson:hover { border-color: rgba(155,182,212,.5); background: rgba(255,255,255,.04); }
+.cp-n { display: block; font-family: var(--serif); font-weight: 500; font-size: 16px; color: #fff; }
+.cp-r { display: block; font-size: 11.5px; color: #9fb0c0; margin-top: 2px; }
+.cp-e { display: block; font-size: 12px; color: #9bb6d4; margin-top: 6px; word-break: break-all; }
+/* form */
+form.card { background: var(--white); color: var(--ink); border-radius: 22px; padding: 38px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { margin-bottom: 18px; }
+.field.full { grid-column: span 2; }
+label { display: block; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); margin-bottom: 8px; font-weight: 700; }
+input, select, textarea {
+  width: 100%; font-family: var(--sans); font-size: 15.5px; color: var(--ink);
+  background: var(--paper); border: 1.5px solid var(--line); border-radius: 11px;
+  padding: 13px 15px; transition: border-color .2s, box-shadow .2s, background .2s;
+}
+input::placeholder, textarea::placeholder { color: var(--steel-2); }
+input:focus, select:focus, textarea:focus {
+  outline: none; border-color: var(--blue); background: var(--white);
+  box-shadow: 0 0 0 4px rgba(47,93,138,.12);
+}
+textarea { resize: vertical; min-height: 108px; }
+.urgency-row { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #fff8f0; border: 1.5px solid rgba(169,128,90,.25); border-radius: 11px; margin-bottom: 18px; }
+.urgency-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold); flex: none; }
+.urgency-row label { margin: 0; text-transform: none; letter-spacing: 0; font-size: 14.5px; font-weight: 600; color: var(--ink); cursor: pointer; }
+.urgency-row .sub-l { font-size: 12px; color: var(--steel); font-weight: 400; }
+.checks { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 2px; }
+.chk-opt { display: inline-flex; align-items: center; gap: 9px; margin: 0; font-size: 14px; font-weight: 500; color: var(--ink); text-transform: none; letter-spacing: 0; cursor: pointer; }
+.chk-opt input { width: 17px; height: 17px; accent-color: var(--blue); }
+.cblabel { display: block; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); margin-bottom: 9px; font-weight: 700; }
+form .btn { width: 100%; justify-content: center; margin-top: 4px; }
+.privacy { font-size: 12px; color: var(--steel); text-align: center; margin-top: 14px; line-height: 1.55; }
+.formnote { font-size: 12px; color: var(--steel); text-align: center; margin-top: 10px; letter-spacing: .02em; }
+.ok { display: none; text-align: center; padding: 36px 10px; }
+.ok.show { display: block; }
+.ok .chk { width: 58px; height: 58px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; margin: 0 auto 18px; }
+.ok h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; }
+.ok p { color: var(--steel); margin-top: 10px; }
+@media(max-width: 880px) { .cgrid { grid-template-columns: 1fr; gap: 44px; } .frow { grid-template-columns: 1fr; } .field.full { grid-column: span 1; } }
+@media(max-width: 560px) { form.card { padding: 28px 22px; } .cteamgrid { grid-template-columns: 1fr; } }
+
+/* ─── footer ─────────────────────────────────────────────────── */
+footer { background: var(--ink); color: #9fb0c0; padding: 0 0 36px; }
+.ftop { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; padding: 60px 0 44px; border-top: 1px solid rgba(255,255,255,.1); }
+footer .brandlogo { height: 38px; filter: brightness(0) invert(1); }
+footer .blurb { font-size: 14.5px; margin-top: 18px; max-width: 25em; color: #8497a8; line-height: 1.68; }
+footer h5 { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: #fff; margin-bottom: 16px; font-weight: 700; }
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+footer ul a, footer ul li { font-size: 14.5px; color: #9fb0c0; }
+footer ul a:hover { color: #9bb6d4; }
+.fbot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 26px; font-size: 12.5px; color: #6f8294; border-top: 1px solid rgba(255,255,255,.08); }
+@media(max-width: 780px) { .ftop { grid-template-columns: 1fr 1fr; } }
+@media(max-width: 480px) { .ftop { grid-template-columns: 1fr; } }
+
+/* ─── mobile sticky bar ──────────────────────────────────────── */
+.mobile-bar {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 800;
+  background: var(--white); border-top: 1px solid var(--line);
+  padding: 12px 20px 16px; gap: 12px;
+  box-shadow: 0 -8px 30px rgba(27,40,54,.12);
+}
+@media(max-width: 880px) {
+  .mobile-bar { display: flex; }
+  /* push chatbot above the sticky bar (bar is ~72px tall) */
+  .ecsbot { bottom: 84px !important; }
+}
+.mobile-bar .btn { flex: 1; justify-content: center; font-size: 14.5px; padding: 13px 16px; }
+
+/* ─── photo strip ────────────────────────────────────────────── */
+.photo-strip { padding: 0; background: var(--ink); overflow: hidden; }
+.photo-strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.photo-strip-grid img { width: 100%; height: 360px; object-fit: cover; display: block; filter: brightness(.92); transition: filter .4s, transform .5s var(--ease-out); }
+.photo-strip-grid img:hover { filter: brightness(1.04); transform: scale(1.03); }
+@media(max-width: 680px) { .photo-strip-grid { grid-template-columns: 1fr; } .photo-strip-grid img { height: 260px; } }
+
+/* ─── about with image ───────────────────────────────────────── */
+.about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: center; text-align: left; }
+.about-img { border-radius: 18px; overflow: hidden; box-shadow: 0 40px 70px -38px rgba(27,40,54,.55); }
+.about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-text .pull { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.28; letter-spacing: -.012em; margin-top: 18px; color: var(--ink); }
+.about-text .pull em { font-style: italic; color: var(--blue); }
+.about-text .body { max-width: 44em; margin-top: 28px; color: var(--steel); font-size: 16.5px; line-height: 1.72; }
+.about-text .milestones { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--line); }
+.about-text .milestone .n { font-family: var(--serif); font-weight: 500; font-size: 36px; color: var(--blue); line-height: 1; }
+.about-text .milestone .n em { font-style: italic; }
+.about-text .milestone .l { font-size: 12.5px; color: var(--steel); margin-top: 5px; letter-spacing: .04em; }
+.about-text .sign { margin-top: 32px; font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--ink); }
+.about-text .sign small { display: block; font-family: var(--sans); font-style: normal; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--steel); margin-top: 5px; font-weight: 700; }
+@media(max-width: 880px) { .about-grid { grid-template-columns: 1fr; } .about-img { max-height: 380px; } }
+
+/* ─── scroll reveal ──────────────────────────────────────────── */
+.rv { opacity: 0; transform: translateY(28px); transition: opacity .75s var(--ease-out), transform .75s var(--ease-out); }
+.rv.in { opacity: 1; transform: none; }
+@media(prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; } }
+</style>
+</head>
+<body id="top">
+
+<!-- ─────────────────────────────── NAV -->
+<header class="nav" id="nav">
+  <div class="wrap navrow">
+    <a class="brand" href="#top">
+      <img class="brandlogo" src="assets/ecs-logo.png" alt="ECS logo" onerror="this.style.display='none'" />
+      <span class="brandtag">Electric Coil Service<small>Est. 1951 · Temple, PA</small></span>
+    </a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#why">Why ECS</a>
+      <a href="#about">About</a>
+      <a href="#proof">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="navcta">
+      <a class="navphone" href="tel:18005238179">1.800.523.8179</a>
+      <a class="btn" href="#contact">Get a Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ─────────────────────────────── HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="herogrid">
+      <div>
+        <div class="hero-badge rv">
+          <span class="dot"></span>
+          Emergency 24–36 hr shipping available
+        </div>
+        <h1 class="rv">Every coil we ship<br>is <em>individually tested.</em><br>Guaranteed.</h1>
+        <p class="sub rv">For over 70 years, motor-repair shops and industrial maintenance teams have trusted Electric Coil Service for replacement coils that fit right the first time — every time.</p>
+        <div class="acts rv">
+          <a class="btn lg" href="#contact">Request a Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost lg" href="tel:18005238179">Call 1.800.523.8179</a>
+        </div>
+        <div class="trust-row rv">
+          <span class="trust-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            ISO 9001:2015 Certified
+          </span>
+          <span class="trust-sep"></span>
+          <span class="trust-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            70+ Years in Business
+          </span>
+          <span class="trust-sep"></span>
+          <span class="trust-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            100% Test Rate
+          </span>
+        </div>
+      </div>
+      <div class="heroart rv">
+        <div class="frame"><img src="ECS%20images/Gearless-Elevator-ECS_132.jpg" alt="ECS gearless elevator coil — precision wound" loading="eager" /></div>
+        <div class="chip">
+          <div class="n">70<em style="font-style:normal;font-size:.7em">+</em></div>
+          <div class="l">Years of coil expertise</div>
+        </div>
+        <div class="iso-badge"><b>ISO<br>9001:2015</b><small>CERTIFIED</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── TRUST STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="stripin">
+      <div class="si rv">
+        <div class="n">70<em>+</em></div>
+        <div class="l">Years in business</div>
+      </div>
+      <div class="si rv">
+        <div class="n">100<em>%</em></div>
+        <div class="l">Coils individually tested</div>
+      </div>
+      <div class="si rv">
+        <div class="n">24<em>–</em>36<em>hr</em></div>
+        <div class="l">Emergency shipping</div>
+      </div>
+      <div class="si rv">
+        <div class="n">32<em>k</em></div>
+        <div class="l">Sq. ft. coil-only plant</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────── PRODUCTS -->
+<section class="sec white" id="products">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="eyebrow c">What we craft</span>
+      <h2>A focused craft, perfected over decades.</h2>
+      <p>We make one thing — formed replacement coils — for heavy industrial, HVAC, mechanical, and elevator systems. Many elevator coils are kept in stock for immediate shipment.</p>
+    </div>
+    <div class="pgrid">
+      <article class="pcard rv">
+        <div class="top">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></span>
+          <span class="no">i.</span>
+        </div>
+        <h3>A-C Stator Coils</h3>
+        <p>Form-wound coils for alternating-current motors and generators across the full voltage range.</p>
+        <span class="sp">Rated up to 13,800 volts</span>
+      </article>
+      <article class="pcard rv">
+        <div class="top">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 9v11"/></svg></span>
+          <span class="no">ii.</span>
+        </div>
+        <h3>Hermetic Stator Coils</h3>
+        <p>Sealed-system coils engineered for refrigerant and compressor service in demanding environments.</p>
+        <span class="sp">HVAC &amp; sealed systems</span>
+      </article>
+      <article class="pcard rv">
+        <div class="top">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h6M15 12h6"/><rect x="9" y="7" width="6" height="10" rx="1"/></svg></span>
+          <span class="no">iii.</span>
+        </div>
+        <h3>D-C Armature Coils</h3>
+        <p>Precision-wound armature coils for direct-current motor rebuilds, all sizes and configurations.</p>
+        <span class="sp">All sizes &amp; types</span>
+      </article>
+      <article class="pcard rv">
+        <div class="top">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 7l-2 3h4l-2 3"/></svg></span>
+          <span class="no">iv.</span>
+        </div>
+        <h3>Elevator Coils</h3>
+        <p>All types of elevator coils — many kept in stock to minimize your downtime and speed your repair.</p>
+        <span class="sp">Many in stock</span>
+      </article>
+      <article class="pcard rv">
+        <div class="top">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12c2-4 6-4 8 0s6 4 8 0"/><path d="M4 17c2-4 6-4 8 0s6 4 8 0"/></svg></span>
+          <span class="no">v.</span>
+        </div>
+        <h3>Eckmeyer Coils</h3>
+        <p>Specialty Eckmeyer-pattern coils wound precisely to original specification — no compromise.</p>
+        <span class="sp">Wound to spec</span>
+      </article>
+      <article class="pcard rv">
+        <div class="top">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v3M12 17v3"/></svg></span>
+          <span class="no">vi.</span>
+        </div>
+        <h3>Rotor &amp; Interpole Coils</h3>
+        <p>Rotor and interpole coils built to spec to complete the rebuild on any machine, any size.</p>
+        <span class="sp">Complete the rebuild</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-grid">
+    <img src="ECS%20images/ECS_326.jpg" alt="ECS formed coil — precision wound" loading="lazy" />
+    <img src="ECS%20images/2-Pole-Hermetic-Stator-ECS_139.jpg" alt="2-pole hermetic stator coil by ECS" loading="lazy" />
+    <img src="ECS%20images/2-Pole-VPI-ECS_142.jpg" alt="2-pole VPI stator coil by ECS" loading="lazy" />
+  </div>
+</div>
+
+<!-- ─────────────────────────────── HOW IT WORKS -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="eyebrow c">How it works</span>
+      <h2>A quote to your door — simply.</h2>
+      <p>Getting the right coil from ECS is straightforward. Share your specs, and we take it from there — tested and shipped fast.</p>
+    </div>
+    <div class="process-grid">
+      <div class="pstep rv">
+        <div class="num">1</div>
+        <h4>Share your specs</h4>
+        <p>Call us, use the form, or download our data sheet. Your spec may already be in our library.</p>
+      </div>
+      <div class="pstep rv">
+        <div class="num">2</div>
+        <h4>We review &amp; quote</h4>
+        <p>An ECS specialist reviews your requirements and prepares an accurate quote — same business day.</p>
+      </div>
+      <div class="pstep rv">
+        <div class="num">3</div>
+        <h4>Wind &amp; test</h4>
+        <p>Our craftsmen wind your coil to OEM spec or better. Every coil is individually tested before it ships.</p>
+      </div>
+      <div class="pstep rv">
+        <div class="num">4</div>
+        <h4>Ships fast</h4>
+        <p>Most emergency orders ship in 24–36 hours. Your line is back up sooner than you'd expect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── WHY ECS -->
+<section class="sec white" id="why">
+  <div class="wrap">
+    <div class="whygrid">
+      <div class="whyart rv">
+        <div class="frame"><img src="ECS%20images/ph_home3.jpg" alt="ECS technician winding a precision coil" loading="lazy" /></div>
+      </div>
+      <div>
+        <div class="sechead left rv" style="margin-bottom: 32px;">
+          <span class="eyebrow">Why ECS</span>
+          <h2 style="font-size: clamp(28px,3.4vw,44px);">The dependability of an OEM, the care of a craftsman.</h2>
+        </div>
+        <div class="whylist">
+          <div class="whyitem rv">
+            <div class="no">i.</div>
+            <div>
+              <h4>Every coil is tested</h4>
+              <p>We individually test every coil for quality and performance — never random sampling. What ships is what passed.</p>
+            </div>
+          </div>
+          <div class="whyitem rv">
+            <div class="no">ii.</div>
+            <div>
+              <h4>24–36 hour emergency shipping</h4>
+              <p>Most emergency orders ship within 24–36 hours. A downed line is back up sooner, cutting your losses.</p>
+            </div>
+          </div>
+          <div class="whyitem rv">
+            <div class="no">iii.</div>
+            <div>
+              <h4>Meets or exceeds OEM specs</h4>
+              <p>Every coil is built to original equipment specification or better — engineered for years of dependable service.</p>
+            </div>
+          </div>
+          <div class="whyitem rv">
+            <div class="no">iv.</div>
+            <div>
+              <h4>A vast library of specifications</h4>
+              <p>Your coil specs are likely already on file with us. We begin winding without delay — no back-and-forth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img rv">
+        <img src="ECS%20images/ph_about-1.png" alt="ECS team in the stator coil warehouse with a finished coil" loading="lazy" />
+      </div>
+      <div class="about-text">
+        <span class="eyebrow rv">Our story</span>
+        <p class="pull rv">First in quality. First in service. Built <em>one coil, and one customer,</em> at a time — since 1951.</p>
+        <div class="body rv">
+          <p>Electric Coil Service is an independently owned manufacturer of replacement electric coils in Temple, Pennsylvania. Our 32,000 sq. ft. plant is dedicated solely to coils for your motor-repair needs. Our technicians bring decades of hands-on experience to every stator and armature they wind. For more than seven decades, that singular focus has made ECS the trusted partner of motor-repair shops, elevator companies, and industrial maintenance teams across the country.</p>
+        </div>
+        <div class="milestones rv">
+          <div class="milestone"><div class="n">1951</div><div class="l">Year founded</div></div>
+          <div class="milestone"><div class="n">70<em>+</em></div><div class="l">Years of expertise</div></div>
+          <div class="milestone"><div class="n">32k</div><div class="l">Sq. ft. facility</div></div>
+          <div class="milestone"><div class="n">100<em>%</em></div><div class="l">Test rate</div></div>
+        </div>
+        <div class="sign rv">"Right first time… every time."<small>The ECS Quality Promise</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── TESTIMONIALS -->
+<section class="sec white" id="proof">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="eyebrow c">In their words</span>
+      <h2>Trusted by the people who keep motors running.</h2>
+    </div>
+    <div class="qgrid">
+      <div class="qc feat rv">
+        <div class="mk">"</div>
+        <p>I know that ECS coils will always arrive on time, fit exactly the way they're supposed to, and deliver the performance I expect. I wouldn't work with anyone else.</p>
+      </div>
+      <div class="qc rv">
+        <div class="mk">"</div>
+        <p>ECS is about people, not just coils — always friendly, courteous and reliable.</p>
+      </div>
+      <div class="qc rv">
+        <div class="mk">"</div>
+        <p>Excellent quality, always on time. What more would you want?</p>
+      </div>
+      <div class="qc rv">
+        <div class="mk">"</div>
+        <p>ECS positively excels in elevator coils — the perfect fit keeps our service calls short.</p>
+      </div>
+      <div class="qc rv" style="grid-column:span 2">
+        <div class="mk" style="text-align:center">"</div>
+        <p style="text-align:center;margin:0 auto;max-width:24em;font-size:clamp(19px,2.4vw,28px)">The perfect choice for major industrial applications. Dependability when it counts the most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── DATA SHEETS -->
+<section class="sec" id="datasheets">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="eyebrow c">Data sheets</span>
+      <h2>Specifications, ready to download.</h2>
+      <p>Download the spec form for your coil type, fill it in, and send it with your order. Your specifications may already be in our library.</p>
+    </div>
+    <div class="dsgrid">
+      <a class="dscard rv" href="datasheets/stator-coil-data-sheet.html">
+        <span class="dsic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
+        <span class="dsmeta"><span class="t">Stator Coil Data Sheet</span><span class="m">Specification form</span></span>
+        <span class="dsdl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
+      </a>
+      <a class="dscard rv" href="datasheets/armature-coil-data-sheet.html">
+        <span class="dsic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
+        <span class="dsmeta"><span class="t">Armature Coil Data Sheet</span><span class="m">2-sided specification form</span></span>
+        <span class="dsdl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
+      </a>
+      <a class="dscard rv" href="datasheets/rotor-coil-data-sheet.html">
+        <span class="dsic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
+        <span class="dsmeta"><span class="t">Rotor Coil Data Sheet</span><span class="m">Specification form</span></span>
+        <span class="dsdl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="cgrid">
+      <div class="cinfo rv">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Let's make your <em>perfect-fit</em> coil.</h2>
+        <p>Experience the ECS difference. Tell us what you're rebuilding and we'll prepare a quote — your specifications may already be on file. For emergency orders, please call directly.</p>
+        <div class="cdetail">
+          <a href="tel:18005238179">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
+            <span><span class="k">Toll free</span><span class="v">1.800.523.8179</span></span>
+          </a>
+          <a href="tel:6109213191">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+            <span><span class="k">Local · Fax</span><span class="v">610.921.3191 · 610.929.7824</span></span>
+          </a>
+          <div class="di">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><span class="k">Plant</span><span class="v">531 Water Street, Temple, PA 19560</span></span>
+          </div>
+        </div>
+        <div class="cteam">
+          <h4 class="cteam-h">Your ECS contacts</h4>
+          <div class="cteamgrid">
+            <a class="cperson" href="mailto:vince.watt@electriccoil.com"><span class="cp-n">Vincent Watt</span><span class="cp-r">President</span><span class="cp-e">vince.watt@electriccoil.com</span></a>
+            <a class="cperson" href="mailto:jeffrey.tantum@electriccoil.com"><span class="cp-n">Jeff Tantum</span><span class="cp-r">VP, Sales &amp; Marketing</span><span class="cp-e">jeffrey.tantum@electriccoil.com</span></a>
+            <a class="cperson" href="mailto:john.martin@electriccoil.com"><span class="cp-n">John Martin</span><span class="cp-r">Sales</span><span class="cp-e">john.martin@electriccoil.com</span></a>
+            <a class="cperson" href="mailto:ronann.dautrich@electriccoil.com"><span class="cp-n">Ronann Dautrich</span><span class="cp-r">Controller</span><span class="cp-e">ronann.dautrich@electriccoil.com</span></a>
+          </div>
+        </div>
+      </div>
+      <form class="card rv" id="quoteForm" novalidate>
+        <div id="formInner">
+          <div class="urgency-row">
+            <input type="checkbox" id="emergency" name="emergency" />
+            <label for="emergency">
+              <span>This is an emergency order</span><br>
+              <span class="sub-l">We prioritize emergency requests — most ship in 24–36 hours</span>
+            </label>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="nm">Name</label><input id="nm" name="name" required placeholder="Jane Winder" /></div>
+            <div class="field"><label for="co">Company</label><input id="co" name="company" placeholder="Motor Repair Co." /></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="em">Email</label><input id="em" type="email" name="email" required placeholder="you@company.com" /></div>
+            <div class="field"><label for="ph">Phone</label><input id="ph" type="tel" name="phone" placeholder="(000) 000-0000" /></div>
+          </div>
+          <div class="field full">
+            <label for="ct">Coil type needed</label>
+            <select id="ct" name="coil">
+              <option value="">Select a coil type…</option>
+              <option>A-C Stator Coil</option>
+              <option>Hermetic Stator Coil</option>
+              <option>D-C Armature Coil</option>
+              <option>Elevator Coil</option>
+              <option>Eckmeyer Coil</option>
+              <option>Rotor / Interpole Coil</option>
+              <option>Not sure — need help</option>
+            </select>
+          </div>
+          <div class="field full"><label for="ms">Tell us about your coil / motor</label><textarea id="ms" name="message" placeholder="Make, model, voltage, quantity, and any other details about the motor…"></textarea></div>
+          <div class="field full">
+            <span class="cblabel">Preferred contact method</span>
+            <div class="checks">
+              <label class="chk-opt"><input type="checkbox" name="byphone" /> <span>Contact me by phone</span></label>
+              <label class="chk-opt"><input type="checkbox" name="byemail" /> <span>Contact me by e-mail</span></label>
+            </div>
+          </div>
+          <button class="btn lg" type="submit">Request my quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="privacy">We respect your privacy. Information you provide is used only to respond to your request — never sold or shared.</div>
+          <div class="formnote">We typically respond the same business day · Emergency orders ship in 24–36 hrs</div>
+        </div>
+        <div class="ok" id="okMsg">
+          <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>Thank you — request received.</h3>
+          <p>An ECS specialist will be in touch shortly. Need it now? Call 1.800.523.8179.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <div>
+        <img class="brandlogo" src="assets/ecs-logo.png" alt="Electric Coil Service" onerror="this.style.display='none'" />
+        <p class="blurb">An independently owned manufacturer of replacement electric coils since 1951. Right first time, every time.</p>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li><a href="#products">A-C Stator Coils</a></li>
+          <li><a href="#products">D-C Armature Coils</a></li>
+          <li><a href="#products">Elevator Coils</a></li>
+          <li><a href="#products">Hermetic / Rotor</a></li>
+          <li><a href="#datasheets">Data Sheets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About ECS</a></li>
+          <li><a href="#why">Why ECS</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#proof">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>531 Water Street</li>
+          <li>Temple, PA 19560</li>
+          <li><a href="tel:18005238179">1.800.523.8179</a></li>
+          <li><a href="tel:6109213191">610.921.3191</a></li>
+          <li>Fax 610.929.7824</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Electric Coil Service, Inc. All rights reserved.</span>
+      <span>ISO 9001:2015 Certified · Made in Temple, PA · Est. 1951</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─────────────────────────────── MOBILE STICKY BAR -->
+<div class="mobile-bar">
+  <a class="btn ghost" href="tel:18005238179">Call Now</a>
+  <a class="btn" href="#contact">Get a Quote</a>
+</div>
+
+<script>
+/* nav scroll */
+const nav = document.getElementById('nav');
+function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 30); }
+onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+/* scroll reveal */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.rv').forEach((el, i) => {
+  el.style.transitionDelay = (Math.min(i % 5, 4) * 65) + 'ms';
+  io.observe(el);
+});
+
+/* form */
+const form = document.getElementById('quoteForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const n = form.querySelector('#nm'), em = form.querySelector('#em');
+  if (!n.value.trim()) { n.focus(); return; }
+  if (!em.value.trim() || !em.checkValidity()) { em.focus(); return; }
+  document.getElementById('formInner').style.display = 'none';
+  document.getElementById('okMsg').classList.add('show');
+});
+</script>
+
+<script>
+/* ============================================================
+   ECS AI Assistant — floating chatbot widget
+   Theme driven by CSS variables on :root
+   ============================================================ */
+(function () {
+  "use strict";
+
+  const KB = `
+You are the ECS Assistant, the friendly, knowledgeable AI helper on the website of
+Electric Coil Service, Inc. (ECS). Answer questions from prospective and existing
+customers clearly, warmly and concisely (2-4 sentences unless asked for detail).
+You are professional but approachable. Always be helpful and steer interested
+visitors toward contacting ECS for a quote.
+
+=== COMPANY FACTS ===
+• Name: Electric Coil Service, Inc. (ECS)
+• In business since 1951 — over 70 years of coil manufacturing experience.
+• Independently owned and operated.
+• Location / plant: 531 Water Street, Temple, PA 19560. A 32,000 sq. ft. facility
+  dedicated SOLELY to making electric coils for motor repair needs.
+• Phone: 610.921.3191   Toll Free: 1.800.523.8179   Fax: 610.929.7824
+• ISO 9001:2015 certified.
+• Quality motto: "Right first time... every time."
+
+=== WHAT MAKES ECS DIFFERENT ===
+• ECS tests EVERY coil it produces — not random sampling. Every coil is individually
+  tested for quality and performance before it ships.
+• 24–36 hour shipment available on most emergency orders. Fast, reliable delivery.
+• All coils meet or exceed original equipment (OEM) specifications.
+• Vast library/inventory of coil specifications — your spec is likely already on file.
+• Focuses ONLY on replacement coils (unlike general suppliers), so deep specialization.
+• Technicians have years of experience with all types and sizes of stator and armature coils.
+
+=== PRODUCTS (coil types ECS manufactures) ===
+• A-C Stator Coils (up to 13,800 volts)
+• Hermetic Stator Coils
+• D-C Armature Coils
+• All types of Elevator Coils (many kept in stock)
+• Eckmeyer Coils
+• Rotor Coils
+• Interpole Coils
+Applications: heavy industrial, HVAC and mechanical systems, elevators, and electric
+motor repair / winding shops.
+
+=== ORDERING / NEXT STEPS ===
+• To request a quote or place an order, call 1.800.523.8179, or use the contact form
+  on this page. Encourage visitors to reach out — ECS responds quickly.
+• If you don't know something specific (exact pricing, a niche spec, current lead time
+  for an unusual order), say so honestly and point them to call 1.800.523.8179 or use
+  the contact form. Never invent specifications, prices, or guarantees.
+• Keep answers grounded in the facts above. Do not discuss competitors by name.
+`.trim();
+
+  const BOT_NAME = "ECS Assistant";
+
+  const SUGGESTIONS = [
+    "What types of coils do you make?",
+    "How fast can you ship?",
+    "How do I request a quote?",
+    "What makes ECS different?",
+  ];
+
+  const css = `
+  .ecsbot, .ecsbot * { box-sizing: border-box; }
+  .ecsbot {
+    --b-accent: var(--bot-accent, #2f5d8a);
+    --b-accent-fg: var(--bot-accent-fg, #ffffff);
+    --b-surface: var(--bot-surface, #fffefb);
+    --b-surface-2: var(--bot-surface-2, #f1eee7);
+    --b-text: var(--bot-text, #1b2836);
+    --b-muted: var(--bot-muted, #5d6f7e);
+    --b-border: var(--bot-border, rgba(27,40,54,.12));
+    --b-radius: var(--bot-radius, 18px);
+    font-family: var(--bot-font, system-ui, -apple-system, "Segoe UI", sans-serif);
+    position: fixed; right: 22px; bottom: 22px; z-index: 2147483000;
+  }
+  .ecsbot-launch {
+    display: flex; align-items: center; gap: 10px;
+    border: none; cursor: pointer;
+    background: var(--b-accent); color: var(--b-accent-fg);
+    height: 58px; padding: 0 20px 0 16px; border-radius: 999px;
+    font: inherit; font-weight: 600; font-size: 15px; letter-spacing: .01em;
+    box-shadow: 0 12px 34px -8px color-mix(in oklab, var(--b-accent) 60%, transparent), 0 2px 8px rgba(0,0,0,.18);
+    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s, opacity .2s;
+  }
+  .ecsbot-launch:hover { transform: translateY(-2px); box-shadow: 0 18px 42px -10px color-mix(in oklab, var(--b-accent) 70%, transparent), 0 3px 10px rgba(0,0,0,.2); }
+  .ecsbot-launch svg { width: 24px; height: 24px; display: block; }
+  .ecsbot-launch .ecsbot-pulse { position: relative; display: inline-flex; }
+  .ecsbot-launch .ecsbot-pulse::after {
+    content: ""; position: absolute; inset: -3px; border-radius: 50%;
+    border: 2px solid var(--b-accent-fg); opacity: 0; animation: ecsbot-ping 2.6s ease-out infinite;
+  }
+  @keyframes ecsbot-ping { 0%{transform:scale(.8);opacity:.5} 70%{transform:scale(1.7);opacity:0} 100%{opacity:0} }
+  .ecsbot[data-open="true"] .ecsbot-launch { opacity: 0; pointer-events: none; transform: scale(.7); }
+  .ecsbot-panel {
+    position: absolute; right: 0; bottom: 0;
+    width: min(380px, calc(100vw - 32px));
+    height: min(560px, calc(100vh - 110px));
+    background: var(--b-surface); color: var(--b-text);
+    border: 1px solid var(--b-border);
+    border-radius: calc(var(--b-radius) + 4px);
+    box-shadow: 0 30px 70px -18px rgba(8,16,28,.45), 0 8px 22px rgba(8,16,28,.18);
+    display: flex; flex-direction: column; overflow: hidden;
+    opacity: 0; transform: translateY(16px) scale(.98); pointer-events: none;
+    transition: opacity .26s ease, transform .26s cubic-bezier(.2,.8,.2,1);
+  }
+  .ecsbot[data-open="true"] .ecsbot-panel { opacity: 1; transform: none; pointer-events: auto; }
+  .ecsbot-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 16px 15px; background: var(--b-accent); color: var(--b-accent-fg);
+  }
+  .ecsbot-head .ecsbot-ava {
+    width: 38px; height: 38px; border-radius: 50%; flex: none;
+    display: grid; place-items: center;
+    background: color-mix(in oklab, var(--b-accent-fg) 18%, transparent);
+  }
+  .ecsbot-head .ecsbot-ava svg { width: 22px; height: 22px; }
+  .ecsbot-head h3 { margin: 0; font: inherit; font-weight: 700; font-size: 15.5px; font-family: var(--bot-title-font, inherit); letter-spacing: .01em; }
+  .ecsbot-head .ecsbot-status { display: flex; align-items: center; gap: 6px; font-size: 12px; opacity: .85; margin-top: 2px; font-weight: 500; }
+  .ecsbot-head .ecsbot-dot { width: 7px; height: 7px; border-radius: 50%; background: #46e08a; box-shadow: 0 0 0 0 rgba(70,224,138,.6); animation: ecsbot-live 2s infinite; }
+  @keyframes ecsbot-live { 0%{box-shadow:0 0 0 0 rgba(70,224,138,.5)} 70%{box-shadow:0 0 0 6px rgba(70,224,138,0)} 100%{box-shadow:0 0 0 0 rgba(70,224,138,0)} }
+  .ecsbot-close { margin-left: auto; background: transparent; border: none; color: var(--b-accent-fg); cursor: pointer; opacity: .8; padding: 4px; border-radius: 8px; line-height: 0; }
+  .ecsbot-close:hover { opacity: 1; background: color-mix(in oklab, var(--b-accent-fg) 16%, transparent); }
+  .ecsbot-close svg { width: 20px; height: 20px; }
+  .ecsbot-body { flex: 1; overflow-y: auto; padding: 18px 16px 8px; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
+  .ecsbot-body::-webkit-scrollbar { width: 8px; }
+  .ecsbot-body::-webkit-scrollbar-thumb { background: var(--b-border); border-radius: 8px; }
+  .ecsbot-row { display: flex; gap: 9px; align-items: flex-end; max-width: 90%; }
+  .ecsbot-row.bot { align-self: flex-start; }
+  .ecsbot-row.user { align-self: flex-end; flex-direction: row-reverse; }
+  .ecsbot-mini { width: 26px; height: 26px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--b-accent); color: var(--b-accent-fg); }
+  .ecsbot-mini svg { width: 15px; height: 15px; }
+  .ecsbot-bubble {
+    padding: 10px 13px; border-radius: var(--b-radius); font-size: 14px; line-height: 1.5;
+    background: var(--b-surface-2); color: var(--b-text);
+    border-bottom-left-radius: 5px;
+    white-space: pre-wrap; word-wrap: break-word;
+  }
+  .ecsbot-row.user .ecsbot-bubble { background: var(--b-accent); color: var(--b-accent-fg); border-bottom-left-radius: var(--b-radius); border-bottom-right-radius: 5px; }
+  .ecsbot-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 2px 2px 14px; }
+  .ecsbot-chip {
+    border: 1px solid var(--b-border); background: var(--b-surface);
+    color: var(--b-text); cursor: pointer; font: inherit; font-size: 12.5px; font-weight: 500;
+    padding: 8px 12px; border-radius: 999px; transition: background .16s, border-color .16s, transform .12s;
+  }
+  .ecsbot-chip:hover { background: var(--b-surface-2); border-color: color-mix(in oklab, var(--b-accent) 45%, var(--b-border)); transform: translateY(-1px); }
+  .ecsbot-typing { display: inline-flex; gap: 4px; padding: 13px 14px; }
+  .ecsbot-typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--b-muted); opacity: .5; animation: ecsbot-bounce 1.3s infinite; }
+  .ecsbot-typing span:nth-child(2){ animation-delay: .18s } .ecsbot-typing span:nth-child(3){ animation-delay: .36s }
+  @keyframes ecsbot-bounce { 0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-5px);opacity:.9} }
+  .ecsbot-foot { padding: 10px 12px 12px; border-top: 1px solid var(--b-border); }
+  .ecsbot-inwrap { display: flex; align-items: flex-end; gap: 8px; background: var(--b-surface-2); border: 1px solid var(--b-border); border-radius: 14px; padding: 6px 6px 6px 14px; transition: border-color .16s; }
+  .ecsbot-inwrap:focus-within { border-color: var(--b-accent); }
+  .ecsbot-in { flex: 1; border: none; background: transparent; resize: none; outline: none; font: inherit; font-size: 14px; color: var(--b-text); max-height: 96px; padding: 6px 0; line-height: 1.4; }
+  .ecsbot-in::placeholder { color: var(--b-muted); }
+  .ecsbot-send { flex: none; width: 36px; height: 36px; border-radius: 10px; border: none; cursor: pointer; background: var(--b-accent); color: var(--b-accent-fg); display: grid; place-items: center; transition: opacity .16s, transform .12s; }
+  .ecsbot-send:hover { transform: translateY(-1px); }
+  .ecsbot-send:disabled { opacity: .4; cursor: default; transform: none; }
+  .ecsbot-send svg { width: 18px; height: 18px; }
+  .ecsbot-note { text-align: center; font-size: 10.5px; color: var(--b-muted); margin: 8px 2px 0; letter-spacing: .02em; }
+  `;
+
+  const ICON_CHAT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>';
+  const ICON_BOLT = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13.2c-.4.5 0 1.3.6 1.3H11l-1.4 7.1c-.1.7.8 1.1 1.2.5L19.5 11c.4-.5 0-1.3-.6-1.3H13l1.3-7c.1-.7-.8-1.1-1.3-.7z"/></svg>';
+  const ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+  const ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
+
+  function build() {
+    const style = document.createElement("style");
+    style.textContent = css;
+    document.head.appendChild(style);
+
+    const root = document.createElement("div");
+    root.className = "ecsbot";
+    root.setAttribute("data-open", "false");
+    root.innerHTML = `
+      <button class="ecsbot-launch" aria-label="Open ${BOT_NAME}">
+        <span class="ecsbot-pulse">${ICON_CHAT}</span>
+        <span>Ask ECS</span>
+      </button>
+      <div class="ecsbot-panel" role="dialog" aria-label="${BOT_NAME}">
+        <div class="ecsbot-head">
+          <span class="ecsbot-ava">${ICON_BOLT}</span>
+          <div>
+            <h3>${BOT_NAME}</h3>
+            <div class="ecsbot-status"><span class="ecsbot-dot"></span> Online · replies instantly</div>
+          </div>
+          <button class="ecsbot-close" aria-label="Close chat">${ICON_CLOSE}</button>
+        </div>
+        <div class="ecsbot-body"></div>
+        <div class="ecsbot-foot">
+          <div class="ecsbot-inwrap">
+            <textarea class="ecsbot-in" rows="1" placeholder="Ask about coils, lead times, quotes…"></textarea>
+            <button class="ecsbot-send" aria-label="Send">${ICON_SEND}</button>
+          </div>
+          <div class="ecsbot-note">AI assistant · for orders call 1.800.523.8179</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(root);
+
+    const els = {
+      root, launch: root.querySelector(".ecsbot-launch"),
+      panel: root.querySelector(".ecsbot-panel"), close: root.querySelector(".ecsbot-close"),
+      body: root.querySelector(".ecsbot-body"), input: root.querySelector(".ecsbot-in"),
+      send: root.querySelector(".ecsbot-send"),
+    };
+
+    const history = [];
+    let greeted = false, busy = false;
+
+    function scroll() { els.body.scrollTop = els.body.scrollHeight; }
+
+    function addMsg(role, text) {
+      const row = document.createElement("div");
+      row.className = "ecsbot-row " + (role === "user" ? "user" : "bot");
+      const bubble = document.createElement("div");
+      bubble.className = "ecsbot-bubble";
+      bubble.textContent = text;
+      if (role === "bot") {
+        const mini = document.createElement("div");
+        mini.className = "ecsbot-mini";
+        mini.innerHTML = ICON_BOLT;
+        row.appendChild(mini);
+      }
+      row.appendChild(bubble);
+      els.body.appendChild(row);
+      scroll();
+      return bubble;
+    }
+
+    function addChips() {
+      const wrap = document.createElement("div");
+      wrap.className = "ecsbot-chips";
+      SUGGESTIONS.forEach((s) => {
+        const c = document.createElement("button");
+        c.className = "ecsbot-chip"; c.textContent = s;
+        c.addEventListener("click", () => { wrap.remove(); ask(s); });
+        wrap.appendChild(c);
+      });
+      els.body.appendChild(wrap);
+      scroll();
+    }
+
+    function typing(on) {
+      let t = els.body.querySelector(".ecsbot-typing-row");
+      if (on) {
+        if (t) return;
+        const row = document.createElement("div");
+        row.className = "ecsbot-row bot ecsbot-typing-row";
+        row.innerHTML = `<div class="ecsbot-mini">${ICON_BOLT}</div><div class="ecsbot-bubble" style="padding:0"><div class="ecsbot-typing"><span></span><span></span><span></span></div></div>`;
+        els.body.appendChild(row); scroll();
+      } else if (t) { t.remove(); }
+    }
+
+    function greet() {
+      if (greeted) return;
+      greeted = true;
+      addMsg("bot", "Hi there! 👋 I'm the ECS Assistant. Ask me anything about our replacement coils, lead times, quality, or how to get a quote.");
+      addChips();
+    }
+
+    function localFallback(text) {
+      const q = text.toLowerCase().trim();
+      if (!q || /^(hi+|hello|hey|howdy|good (morning|afternoon|evening)|greetings|sup|yo)\b/.test(q) || q.length < 6)
+        return "Hi! I'm the ECS Assistant. I can answer questions about our replacement coils, lead times, quotes, and more. What can I help you with?";
+      if (/elevator/i.test(q))
+        return "ECS manufactures all types of elevator coils and keeps many in stock for fast delivery. Call 1.800.523.8179 to check availability.";
+      if (/coil|stator|armature|rotor|hermetic|eckmeyer|interpole|motor|winding|rewind|replacement/i.test(q))
+        return "ECS manufactures A-C Stator Coils (up to 13,800V), Hermetic Stator Coils, D-C Armature Coils, Elevator Coils, Eckmeyer Coils, Rotor Coils, and Interpole Coils — for heavy industrial, HVAC, elevator, and motor repair applications.";
+      if (/ship|lead.?time|deliver|rush|emergency|urgent|turnaround|how.?long|how fast|how soon/i.test(q))
+        return "Most emergency orders ship within 24-36 hours. ECS keeps a vast library of coil specs on file, which speeds turnaround significantly. For your specific lead time, call 1.800.523.8179.";
+      if (/quote|price|cost|how much|buy|purchas|afford|billing/i.test(q))
+        return "Getting a quote is easy — call toll-free at 1.800.523.8179 or use the contact form on this page. ECS responds quickly, and your spec may already be on file.";
+      if (/different|better|stand out|advantage|competi|best|why (choose|pick|use|ecs)/i.test(q))
+        return "ECS tests EVERY coil it produces — not random sampling. In business since 1951, ISO 9001:2015 certified, and focused exclusively on replacement coils, ECS ensures all coils meet or exceed OEM specs.";
+      if (/quality|certif|iso|oem|spec|guarantee|standard/i.test(q))
+        return "ECS is ISO 9001:2015 certified with the motto \"Right first time, every time.\" Every coil is individually tested before shipping and meets or exceeds OEM specifications.";
+      if (/location|address|where.*located|plant|facility|temple|pennsylvania/i.test(q))
+        return "ECS is at 531 Water Street, Temple, PA 19560 — a 32,000 sq. ft. facility dedicated solely to electric coil manufacturing.";
+      if (/phone|number|reach|email|fax/i.test(q))
+        return "Call ECS at 610.921.3191 or toll-free at 1.800.523.8179. Fax: 610.929.7824. You can also use the contact form on this page.";
+      if (/volt|13.?800|voltage/i.test(q))
+        return "ECS manufactures A-C Stator Coils up to 13,800 volts, covering a wide range of industrial motor applications.";
+      if (/year|since|histor|founded|established|1951|experience/i.test(q))
+        return "Electric Coil Service has been in business since 1951 — over 70 years of coil manufacturing experience, independently owned and operated.";
+      if (/what (do|does|is|are).*(you|ecs)|tell me about|who are you|about ecs|what.*offer|what.*service|what.*product/i.test(q))
+        return "ECS — Electric Coil Service — has manufactured replacement electric coils since 1951. We make A-C Stator, Hermetic, D-C Armature, Elevator, Rotor, Interpole, and Eckmeyer Coils for industrial, HVAC, and motor repair applications. Every coil is tested before shipping.";
+      if (/help|assist|contact|order|request|start|get (a|one)|need|looking/i.test(q))
+        return "I'm here to help! You can ask me about coil types, lead times, quotes, or what makes ECS different. Or call us directly at 1.800.523.8179.";
+      return "For the most accurate answer, call ECS at 1.800.523.8179 or use the contact form — the team responds quickly and will be happy to help.";
+    }
+
+    async function ask(text) {
+      if (busy) return;
+      text = (text || "").trim();
+      if (!text) return;
+      const chips = els.body.querySelector(".ecsbot-chips");
+      if (chips) chips.remove();
+      addMsg("user", text);
+      history.push({ role: "user", content: text });
+      els.input.value = ""; els.input.style.height = "auto";
+      busy = true; els.send.disabled = true;
+      typing(true);
+      try {
+        const messages = [
+          { role: "user", content: KB + "\n\nAcknowledge silently and then act as the ECS Assistant for the conversation that follows." },
+          { role: "assistant", content: "Understood — I'm ready to help as the ECS Assistant." },
+          ...history,
+        ];
+        let reply;
+        if (window.claude && typeof window.claude.complete === "function") {
+          reply = await window.claude.complete({ messages });
+        } else {
+          reply = localFallback(text);
+        }
+        typing(false);
+        addMsg("bot", (reply || "").trim() || "Sorry, I didn't catch that — could you rephrase? For immediate help, call 1.800.523.8179.");
+        history.push({ role: "assistant", content: reply || "" });
+      } catch (e) {
+        typing(false);
+        addMsg("bot", localFallback(text));
+      } finally {
+        busy = false; els.send.disabled = false; els.input.focus();
+      }
+    }
+
+    function open() { root.setAttribute("data-open", "true"); greet(); setTimeout(() => els.input.focus(), 280); }
+    function close() { root.setAttribute("data-open", "false"); }
+
+    els.launch.addEventListener("click", open);
+    els.close.addEventListener("click", close);
+    els.send.addEventListener("click", () => ask(els.input.value));
+    els.input.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(els.input.value); } });
+    els.input.addEventListener("input", () => { els.input.style.height = "auto"; els.input.style.height = Math.min(els.input.scrollHeight, 96) + "px"; });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
+  else build();
+})();
+</script>
+</body>
+</html>
